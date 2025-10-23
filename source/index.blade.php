@@ -1,5 +1,22 @@
 @extends('_layouts.main')
 
+@section('navigation')
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-between py-1 opacity-90  h-20">
+    <div class="flex-3"></div>
+    <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
+    <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
+    <div class="flex-5 space-x-1 text-stone-100 text-right">
+        <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
+        <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
+        <a href="/kalendars" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
+        <a href="/kontakti" class="px-1 hover:text-lime-600 transition">Kontakti</a>
+        <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
+        <!--<a class="navigation">test</a>-->
+    </div>
+    <div class="flex-3"></div>
+</nav>
+@endsection
+
 @section('landing')
 <div id="landing" class="p-8 bg-cover bg-center h-[100vh] flex items-center grayscale-[40%]"
     style="background-image: url('{{ vite('source/assets/images/slide1.jpg') }}');">
@@ -12,23 +29,6 @@
     </div>
     <div class="flex-3"></div>
 </div>
-@endsection
-
-@section('navigation')
-<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-between py-1 opacity-90  h-20">
-    <div class="flex-3"></div>
-    <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
-    <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
-    <div class="flex-5 space-x-1 text-stone-100 text-right">
-        <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
-        <a href="/galerija" class="px-1 hover:text-lime-600 transition">Galerija</a>
-        <a href="/kalendars" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
-        <a href="/kontakti" class="px-1 hover:text-lime-600 transition">Kontakti</a>
-        <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
-        <!--<a class="navigation">test</a>-->
-    </div>
-    <div class="flex-3"></div>
-</nav>
 @endsection
 
 @section('about')
@@ -87,6 +87,12 @@
         </div>
     </div>
     <div class="flex-2"></div>
+</div>
+@endsection
+
+@section('gallery')
+<div id="gallery" class="min-h-screen flex items-center bg-neutral-800">
+
 </div>
 @endsection
 

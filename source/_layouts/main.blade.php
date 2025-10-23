@@ -16,6 +16,7 @@
         @yield('landing')
         <!--@yield('tester')-->
         @yield('about')
+        @yield('gallery')
         <!--@yield('body2')-->
     </body>
 </html>
