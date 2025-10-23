@@ -8,9 +8,14 @@
         <title>{{ $page->title }}</title>
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
         <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
     </head>
-    <body class="text-gray-900 font-sans antialiased">
-        @yield('body')
+    <body class="text-gray-900 font-roboto antialiased text-[15px]">
+        @yield('navigation')
+        @yield('landing')
+        <!--@yield('tester')-->
+        @yield('about')
+        <!--@yield('body2')-->
     </body>
 </html>
