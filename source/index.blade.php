@@ -1,14 +1,16 @@
 @extends('_layouts.main')
 
 @section('landing')
-<div class="p-8 bg-cover bg-center h-[100vh]"
-    style="background-image: url('{{ vite('source/assets/images/slide1.jpg') }}');"
->
-    <h1 class="text-3xl font-bold">Selonija</h1>
-    <h2 class="float-center">Laipni lūgts Selonijā</h2>
-    <div>
-        Studentu korporācija Selonija ir akadēmiska mūža brālība ar mērķi attītstīt un atbalstīt savas sabiedrības locekļus, audzinot tos goda, augstas pašapziņas un latvietības vērtībās, kas ir svarīgas brīvas Latvijas valsts izaugsmei un ilgtspējīgai, uz mērķi orientētai attīstībai. Selonija sastāv no Selonijas konventa un Filistru biedrības.
+<div class="p-8 bg-cover bg-center h-[100vh] flex items-center grayscale-[40%]"
+    style="background-image: url('{{ vite('source/assets/images/slide1.jpg') }}');">
+    <div class="flex-3"></div>
+    <div class="flex-2 text-stone-100 text-center">
+        <h2 class="float-center text-6xl p-8">Laipni lūgts <span class="text-lime-600">Selonijā</span></h2>
+        <div class="text-stone-300">
+            Studentu korporācija Selonija ir akadēmiska mūža brālība ar mērķi attītstīt un atbalstīt savas sabiedrības locekļus, audzinot tos goda, augstas pašapziņas un latvietības vērtībās, kas ir svarīgas brīvas Latvijas valsts izaugsmei un ilgtspējīgai, uz mērķi orientētai attīstībai. Selonija sastāv no Selonijas konventa un Filistru biedrības.
+        </div>
     </div>
+    <div class="flex-3"></div>
 </div>
 @endsection
 
