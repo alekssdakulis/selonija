@@ -15,7 +15,8 @@
 @section('navigation')
 <nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-between py-1 opacity-90  h-20">
     <div class="flex-3"></div>
-    <div class="flex-1 text-2xl font-bold text-lime-600">Selonija</div>
+    <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="test">
+    <div class="flex-1 text-4xl font-bold text-lime-600">Selonija</div>
     <div class="flex-5 space-x-1 text-stone-100 text-right">
         <a href="/about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
         <a href="/galerija" class="px-1 hover:text-lime-600 transition">Galerija</a>
