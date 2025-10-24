@@ -91,8 +91,17 @@
 @endsection
 
 @section('gallery')
-<div id="gallery" class="min-h-screen flex items-center bg-neutral-800">
+<div id="gallery" class="h-auto items-center bg-slate-100">
+    <h1 class="text-4xl font-bold p-5 text-center">Ieskats Selonijas dzīvē</h1>
+    <div class="flex w-full justify-center space-x-10 pt-11 uppercase font-bold">
+        <span class="hover:text-lime-600 transition cursor-pointer">visas</span>
+        <span class="hover:text-lime-600 transition cursor-pointer">sēļi</span>
+        <span class="hover:text-lime-600 transition cursor-pointer">simboli un vēsture</span>
+        <span class="hover:text-lime-600 transition cursor-pointer">pasākumi</span>
+    </div>
+    <div class="h-auto">
 
+    </div>
 </div>
 @endsection
 
