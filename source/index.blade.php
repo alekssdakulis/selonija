@@ -32,7 +32,7 @@
 @endsection
 
 @section('about')
-<div id="about" class="p-8 min-h-screen flex items-center">
+<div x-data="{readMore: false}" id="about" class="p-8 min-h-screen flex items-center">
     <div class="flex-2"></div>
     <div class="flex-3 text-center">
         <img src="{{ vite('source/assets/images/gerbonis.png') }}" class="mx-auto mt-40" alt="gerbonis">
@@ -40,7 +40,7 @@
         <div class="pb-2">
             Selonija ir vecākā latviešu studentu korporācija Latvijā, tā ir dibināta 1880.gada 24.novembrī pie Rīgas Politehnikuma. Korporācijas dibināšanu noteica latviešu pieaugošā tieksme pēc neatkarības, pašapliecināšanās un latviskas identitātes. 19.gs. beigas iezīmē pārmaiņas sabiedrībā, latviešiem arvien vairāk apzinoties savas saknes un kopību, dibinot intelektuālas un komerciālas apvienības, ieņemot arvien augstāku stāvokli un vairojot savu turīgumu. Latviešu korporācijas dibināšana bija veids kā izrauties no līdz šim dominējošo vācbaltiešu aizbildniecības un aizspriedumiem, aizsākot pašiem savu ceļu. Selonijas dibinātāji bija Puriņu Klāva 1878.gadā dibinātā Draugu pulciņa dalībnieki, kuriem gadu vēlāk pievienojās 19 no vācu korporācijām Concordia Rigensis, Fraternitas Baltica, Rubonia un Borystenia izstājušies burši. To skaitā bija arī vairāki vācbaltieši.
         </div>
-        <div id="more-text" class="hidden space-y-2">
+        <div x-show="readMore" class="space-y-2">
             <div>
                 Pēc korporācijas dibināšanas bija nepieciešams iegūt oficiālu atzīšanu no jau eksistējošām vācbaltiešu korporācijām. Tikai šādi bija iespējams pilnvērtīgi iekļauties korporāciju sabiedriskajā dzīvē un veidot attiecības atbilstoši buršu principiem. Korporāciju nozīme Rīgas Politehnikumā šajā laikā bija ievērojami lielāka nekā mūsdienu Latvijas universitātēs un vairākums no studentiem bija korporāciju locekļi. Tomēr neskatoties uz vairākkārtīgiem Selonijas iesniegumiem, korporāciju apvienība Šaržēto Konvents (C!C!) 17 gadus atteicās atzīt latviešu korporāciju. Šāda stāvokļa sekas bija daudzās menzūras (attiecību atrisināšana paukojot), ko seloņi izcirta ar vācbaltiešu korporāciju locekļiem, kuri atteicās paciest seloņu eksistenci.
             </div>
@@ -78,7 +78,7 @@
                 Līdz ar tautas atmodu un PSRS sabrukuma iesākumu, Selonijai 1989. gadā izdodas atjaunot darbību pie Rīgas Politehniskā institūta (tagadējās Rīgas Tehniskā universitātes). Tiek turpinātas sen iedzīvinātās Selonijas tradīcijas, caur patriotismu un godprātību veicinot katra sabiedrības locekļa un Latvijas izaugsmi kopumā. Selonijas komāna garanti ir Fraternitas Vesthardiana, Salgalia, Fraternitas Imantica, Gersicania, Fraternitas Vanenica un Vendia.
             </div>
         </div>
-        <div class="p-5 cursor-pointer hover:underline text-lime-600" id="show-more">Lasīt vairāk</div>
+        <div class="p-5 cursor-pointer hover:underline text-lime-600" @click="readMore = ! readMore" x-text="readMore ? 'Lasīt mazāk' : 'Lasīt vairāk'">Lasīt vairāk</div>
         <div class="flex justify-center items-center mt-6">
             <img src="{{ vite('source/assets/images/cepure.png') }}" class="mx-auto" alt="cepure">
             <img src="{{ vite('source/assets/images/vairogs.png') }}" class="mx-auto" alt="vairogs">

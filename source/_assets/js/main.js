@@ -11,21 +11,21 @@
 // });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('show-more');
-    const moreText = document.getElementById('more-text');
-    let expanded = false;
+// document.addEventListener('DOMContentLoaded', function() {
+//     const toggle = document.getElementById('show-more');
+//     const moreText = document.getElementById('more-text');
+//     let expanded = false;
 
-    if (toggle && moreText) {
-        toggle.addEventListener('click', function() {
-            expanded = !expanded;
-            if (expanded) {
-                moreText.classList.remove('hidden');
-                toggle.textContent = 'Lasīt mazāk';
-            } else {
-                moreText.classList.add('hidden');
-                toggle.textContent = 'Lasīt vairāk';
-            }
-        });
-    }
-});
+//     if (toggle && moreText) {
+//         toggle.addEventListener('click', function() {
+//             expanded = !expanded;
+//             if (expanded) {
+//                 moreText.classList.remove('hidden');
+//                 toggle.textContent = 'Lasīt mazāk';
+//             } else {
+//                 moreText.classList.add('hidden');
+//                 toggle.textContent = 'Lasīt vairāk';
+//             }
+//         });
+//     }
+// });
