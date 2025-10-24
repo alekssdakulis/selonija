@@ -100,7 +100,10 @@
         <span class="hover:text-lime-600 transition cursor-pointer">pasākumi</span>
     </div>
     <div class="h-auto">
-
+        @foreach ($photos as $photo)
+            <li>{{ $photo->title }}</li>
+            <img src="{{ vite($photo->image) }}" alt="text"></img>
+        @endforeach
     </div>
 </div>
 @endsection

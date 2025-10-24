@@ -5,5 +5,9 @@ return [
     'baseUrl' => '',
     'title' => 'Jigsaw',
     'description' => 'Website description.',
-    'collections' => [],
+    'collections' => [
+        'photos' =>[
+            'path' => '_photos/{directory}/{filename}',
+        ]
+    ],
 ];
