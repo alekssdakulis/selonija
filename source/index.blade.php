@@ -92,17 +92,17 @@
 
 @section('gallery')
 <div id="gallery" class="h-auto items-center bg-slate-100">
-    <h1 class="text-4xl font-bold p-5 text-center">Ieskats Selonijas dzīvē</h1>
+    <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
     <div class="flex w-full justify-center space-x-10 pt-11 uppercase font-bold">
         <span class="hover:text-lime-600 transition cursor-pointer">visas</span>
         <span class="hover:text-lime-600 transition cursor-pointer">sēļi</span>
         <span class="hover:text-lime-600 transition cursor-pointer">simboli un vēsture</span>
         <span class="hover:text-lime-600 transition cursor-pointer">pasākumi</span>
     </div>
-    <div class="h-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 pl-2 pr-2 pt-8">
         @foreach ($photos as $photo)
-            <li>{{ $photo->title }}</li>
-            <img src="{{ vite($photo->image) }}" alt="text"></img>
+            <!--li>{{ $photo->title }}</li-->
+            <img src="{{ vite($photo->image) }}" alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}" class="w-full h-full object-cover ">
         @endforeach
     </div>
 </div>
