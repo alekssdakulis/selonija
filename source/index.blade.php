@@ -91,18 +91,29 @@
 @endsection
 
 @section('gallery')
-<div id="gallery" class="h-auto items-center bg-slate-100">
+<div x-data="{ filter: 'visas' }" id="gallery" class="h-auto items-center bg-slate-100 min-h-screen">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
     <div class="flex w-full justify-center space-x-10 pt-11 uppercase font-bold">
-        <span class="hover:text-lime-600 transition cursor-pointer">visas</span>
-        <span class="hover:text-lime-600 transition cursor-pointer">sēļi</span>
-        <span class="hover:text-lime-600 transition cursor-pointer">simboli un vēsture</span>
-        <span class="hover:text-lime-600 transition cursor-pointer">pasākumi</span>
+        <span :class="filter === 'visas' ? 'text-lime-600' : ''"
+              class="hover:text-lime-600 transition cursor-pointer"
+              @click="filter = 'visas'">visas</span>
+        <span :class="filter === 'seli' ? 'text-lime-600' : ''"
+              class="hover:text-lime-600 transition cursor-pointer"
+              @click="filter = 'seli'">sēļi</span>
+        <span :class="filter === 'simboli' ? 'text-lime-600' : ''"
+              class="hover:text-lime-600 transition cursor-pointer"
+              @click="filter = 'simboli'">simboli un vēsture</span>
+        <span :class="filter === 'pasakumi' ? 'text-lime-600' : ''"
+              class="hover:text-lime-600 transition cursor-pointer"
+              @click="filter = 'pasakumi'">pasākumi</span>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 pl-2 pr-2 pt-8">
         @foreach ($photos as $photo)
-            <!--li>{{ $photo->title }}</li-->
-            <img src="{{ vite($photo->image) }}" alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}" class="w-full h-full object-cover ">
+            <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
+                <img src="{{ vite($photo->image) }}"
+                     alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
+                     class="w-full h-full object-cover ">
+            </template>
         @endforeach
     </div>
 </div>
