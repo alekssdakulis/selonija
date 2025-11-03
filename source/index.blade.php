@@ -91,7 +91,7 @@
 @endsection
 
 @section('gallery')
-<div x-data="{ filter: 'visas' }" id="gallery" class="h-auto items-center bg-slate-100 min-h-screen">
+<div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center bg-slate-100 min-h-screen">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
     <div class="flex w-full justify-center space-x-10 pt-11 uppercase font-bold">
         <span :class="filter === 'visas' ? 'text-lime-600' : ''"
@@ -110,7 +110,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 pl-1 pr-1 pt-8">
         @foreach ($photos as $photo)
             <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
-                <div class="relative group">
+                <div class="relative group" @click=" selectedImage = '{{ vite($photo->image) }}'">
                     <img src="{{ vite($photo->image) }}"
                          alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
                          class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
@@ -122,6 +122,14 @@
             </template>
         @endforeach
     </div>
+
+    <div x-show="selectedImage" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" @click="selectedImage = null">
+        <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12" @click.stop>
+            <button @click="selectedImage = null" class="absolute top-4 right-4 bg-lime-600 text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
+            <img :src="selectedImage" class="w-full h-auto object-contain max-w-[100%] max-h-[100%]">
+        </div>
+    </div>
+
 </div>
 @endsection
 
