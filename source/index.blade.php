@@ -107,12 +107,18 @@
               class="hover:text-lime-600 transition cursor-pointer"
               @click="filter = 'pasakumi'">pasākumi</span>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 pl-2 pr-2 pt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 pl-1 pr-1 pt-8">
         @foreach ($photos as $photo)
             <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
-                <img src="{{ vite($photo->image) }}"
-                     alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
-                     class="w-full h-full object-cover ">
+                <div class="relative group">
+                    <img src="{{ vite($photo->image) }}"
+                         alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
+                         class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
+                        <h1 class="text-lime-600 text-xl font-bold text-center px-2 py-1 rounded">{{ $photo->title }}</h1>
+                        <span class="text-neutral-300 px-8 text-sm">{{ $photo->description }}</span>
+                    </div>
+                </div>
             </template>
         @endforeach
     </div>
