@@ -125,13 +125,13 @@
 
     <div x-show="selectedImage" class="fixed inset-0 flex items-center justify-center z-50" @click="selectedImage = null">
     <!--<div class="w-full h-full bg-black"></div>    -->
-    <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/85"><!-- @click.stop-->
-        <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12">
-            <button @click="selectedImage = null" class="absolute top-4 right-4 bg-lime-600 text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
-            <img :src="selectedImage" class="w-full h-auto object-contain max-w-[100%] max-h-[100%]" @click.stop>
+        <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/85"><!-- @click.stop-->
+            <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12">
+                <button @click="selectedImage = null" class="absolute top-4 right-4 bg-lime-600 text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
+                <img :src="selectedImage" class="w-full h-auto object-contain max-w-[100%] max-h-[100%]" @click.stop>
+            </div>
         </div>
     </div>
-</div>
 
 </div>
 @endsection
