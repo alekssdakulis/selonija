@@ -115,20 +115,23 @@
                          alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
                          class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
                     <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
-                        <h1 class="text-lime-600 text-xl font-bold text-center px-2 py-1 rounded">{{ $photo->title }}</h1>
-                        <span class="text-neutral-300 px-8 text-sm">{{ $photo->description }}</span>
+                        <h1 class="text-lime-600 text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $photo->title }}</h1>
+                        <span class="text-neutral-300 px-8 text-sm text-center">{{ $photo->description }}</span>
                     </div>
                 </div>
             </template>
         @endforeach
     </div>
 
-    <div x-show="selectedImage" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" @click="selectedImage = null">
-        <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12" @click.stop>
+    <div x-show="selectedImage" class="fixed inset-0 flex items-center justify-center z-50" @click="selectedImage = null">
+    <!--<div class="w-full h-full bg-black"></div>    -->
+    <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/85"><!-- @click.stop-->
+        <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12">
             <button @click="selectedImage = null" class="absolute top-4 right-4 bg-lime-600 text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
-            <img :src="selectedImage" class="w-full h-auto object-contain max-w-[100%] max-h-[100%]">
+            <img :src="selectedImage" class="w-full h-auto object-contain max-w-[100%] max-h-[100%]" @click.stop>
         </div>
     </div>
+</div>
 
 </div>
 @endsection
