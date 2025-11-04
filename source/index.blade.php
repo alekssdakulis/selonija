@@ -8,7 +8,7 @@
     <div class="flex-5 space-x-1 text-stone-100 text-right">
         <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
         <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
-        <a href="/kalendars" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
+        <a href="#calendar" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
         <a href="/kontakti" class="px-1 hover:text-lime-600 transition">Kontakti</a>
         <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
         <!--<a class="navigation">test</a>-->
@@ -124,7 +124,7 @@
     </div>
 
     <div x-show="selectedImage" class="fixed inset-0 flex items-center justify-center z-50" @click="selectedImage = null">
-    <!--<div class="w-full h-full bg-black"></div>    -->
+    <!--<div class="w-full h-full bg-bla boldck"></div>    -->
         <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/85"><!-- @click.stop-->
             <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12">
                 <button @click="selectedImage = null" class="absolute top-4 right-4 bg-lime-600 text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
@@ -133,6 +133,18 @@
         </div>
     </div>
 
+</div>
+@endsection
+
+@section('calendar')
+<div class="min-h-screen block items-center justify-between" id="calendar">
+<h1 class="text-center font-bold text-4xl pt-15">Seko līdzi</h1>
+<div class="text-center text-xl pt-5 text-lime-600 font-bold">tuvākajiem pasākumiem Selonijā</div>
+<div class="googleCalendar col-md-12 col-lg-12 wow fadeInLeft">
+                <div id="full-calendar"></div>
+            <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=lkmqpoa39ocrgap4u767r5gj7o%40group.calendar.google.com&amp;color=%232952A3&amp;src=1r88r3shdnm409er2vjtcqejq8%40group.calendar.google.com&amp;color=%23A32929&amp;src=h2lgqj5fggdhtl0ii1m5d71doo%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Europe%2FRiga" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe> -->
+            <!-- <img src="img/arrow.png" alt="" class="img-responsive wow pull-right fadeInRight"> -->
+            </div>
 </div>
 @endsection
 

@@ -18,6 +18,7 @@
         <!--@yield('tester')-->
         @yield('about')
         @yield('gallery')
+        @yield('calendar')
         <!--@yield('body2')-->
     </body>
 </html>
