@@ -9,7 +9,7 @@
         <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
         <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
         <a href="#calendar" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
-        <a href="/kontakti" class="px-1 hover:text-lime-600 transition">Kontakti</a>
+        <a href="#contacts" class="px-1 hover:text-lime-600 transition">Kontakti</a>
         <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
         <!--<a class="navigation">test</a>-->
     </div>
@@ -137,7 +137,7 @@
 @endsection
 
 @section('calendar')
-<div class="min-h-screen flex flex-col items-center justify-center" id="calendar">
+<div class="min-h-screen flex flex-col items-center justify-center pb-12" id="calendar">
     <h1 class="text-center font-bold text-4xl pt-15">Seko līdzi</h1>
     <div class="text-center text-xl pt-5 text-lime-600 font-bold">tuvākajiem pasākumiem Selonijā</div>
     <div class="googleCalendar w-full lg:w-3/5 wow fadeInLeft"><!-- col-md-12 col-lg-12 -->
@@ -145,6 +145,13 @@
     <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=lkmqpoa39ocrgap4u767r5gj7o%40group.calendar.google.com&amp;color=%232952A3&amp;src=1r88r3shdnm409er2vjtcqejq8%40group.calendar.google.com&amp;color=%23A32929&amp;src=h2lgqj5fggdhtl0ii1m5d71doo%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Europe%2FRiga" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe> -->
     <!-- <img src="img/arrow.png" alt="" class="img-responsive wow pull-right fadeInRight"> -->
     </div>
+</div>
+@endsection
+
+@section('contacts')
+<div id="contacts" class="flex flex-col items-center justify-center bg-neutral-800">
+    <h1 class="text-center font-bold text-4xl pt-15 text-white">Amatpersonas</h1>
+    <span class="text-center text-xl text-lime-600 font-bold pt-3">Selonijas prezidijs</span>
 </div>
 @endsection
 

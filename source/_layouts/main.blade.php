@@ -19,6 +19,7 @@
         @yield('about')
         @yield('gallery')
         @yield('calendar')
+        @yield('contacts')
         <!--@yield('body2')-->
     </body>
 </html>
