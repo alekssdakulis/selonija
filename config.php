@@ -8,6 +8,9 @@ return [
     'collections' => [
         'photos' =>[
             'path' => '_photos/{directory}/{filename}',
-        ]
+        ],
+        'prezidijs' =>[
+            'path' => '_prezidijs/{directory}/{filename}',
+        ],
     ],
 ];
