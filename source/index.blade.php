@@ -153,15 +153,18 @@
     <h1 class="text-center font-bold text-4xl pt-15 text-white">Amatpersonas</h1>
     <span class="text-center text-xl text-lime-600 font-bold pt-3">Selonijas prezidijs</span>
     <div class="w-full lg:w-1/2">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 pl-1 pr-1 pt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pl-1 pr-1 pt-8">
         @foreach ($prezidijs->sortBy('weight') as $amatpersona)
                 <div class="relative group">
+                    <div>
                     <img src="{{ vite($amatpersona->image) }}"
                          alt="{{ $amatpersona->title ?? 'Selonijas galerijas attēls' }}"
-                         class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
+                         class="w-full h-full object-cover grayscale-0 group-hover:grayscale transition duration-600">
+                    </div>
+                    <span class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center font-bold text-xl text-lime-600 group-hover:hidden">{{ $amatpersona->name }}</span>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-60 transition duration-600 bg-neutral-800 bg-opacity-50">
                         <h1 class="text-lime-600 text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $amatpersona->title }}</h1>
-                        <span class="text-neutral-300 px-8 text-sm text-center">{{ $amatpersona->name }}</span>
+                        <!--span class="text-neutral-300 px-8 text-sm text-center">{{ $amatpersona->name }}</span-->
                     </div>
                 </div>
             
