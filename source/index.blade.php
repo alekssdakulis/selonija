@@ -16,9 +16,13 @@
     </div>
 
     <!--Mobile-->
-    <div class="w-full flex items-center justify-between md:hidden p-4">
-        <div class="text-lime-600 font-bold text-4xl">Selonija</div>
-        <div class="flex flex-col gap-1 cursor-pointer">
+    <div class="w-full flex items-center justify-between md:hidden p-1">
+        <div class="flex flex-row items-center">
+            <img src="{{ vite('source/assets/images/brand.png') }}" class="h-15" alt="brand">
+            <div class="text-lime-600 font-bold text-3xl">Selonija</div>
+        </div>
+        
+        <div class="flex flex-col gap-1 cursor-pointer pr-5">
             <span class="w-7 h-0.5 bg-white"></span>
             <span class="w-7 h-0.5 bg-white"></span>
             <span class="w-7 h-0.5 bg-white"></span>
