@@ -277,8 +277,8 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center">
-            <div class="w-full text-center p-10 border-t border-t-text-stone-300"><span class="font-bold text-lime-600">Selonija</span> © 1880-2025. Visas tiesības aizsargātas.</div>
+        <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center" x-data="{ currentYear: new Date().getFullYear() }">
+            <div class="w-full text-center p-10 border-t border-t-text-stone-300"><span class="font-bold text-lime-600">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
         </div>
     </div>
 </div>
