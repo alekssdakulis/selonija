@@ -226,7 +226,7 @@
     <div class="flex items-center justify-center">
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300">
             <div class="grid grid-cols-1 lg:grid-cols-3">
-                <div class="p-12 flex items-center justify-center">
+                <div class="p-12 lg:pl-0 flex items-center justify-center lg:justify-start">
                     <div>
                         <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
                     </div>
@@ -236,7 +236,7 @@
                         <div>Stabu iela 17 Rīga,<br>LV-1011.Latvija</div>
                     </div>
                 </div>
-                <div class="p-12 flex items-center justify-center">
+                <div class="p-12 lg:pr-0 flex items-center justify-center lg:justify-end">
                     <div>
                         <div>Telefons: (+371) 6727-3303</div>
                     </div>
@@ -249,11 +249,19 @@
     <div class="flex flex-col items-center justify-center text-stone-300">
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center">
             <div class="grid grid-cols-1 lg:grid-cols-2 h-auto pt-12 pb-10">
-                <div class="text-left flex flex-col">
+                <div class="text-center lg:text-left flex flex-col">
+                    <div class="flex gap-4 pb-2 justify-center lg:justify-start">
+                        <a href="http://www.pk.lv/">
+                            <img src="{{ vite('source/assets/images/pk.png') }}" alt="PK logo" class="h-10">
+                        </a>
+                        <a href="http://www.spk.lv/">
+                            <img src="{{ vite('source/assets/images/spk.png') }}" alt="SPK logo" class="h-10">
+                        </a>
+                    </div>
                     <a class="text-lime-600 pb-2" href="">Privacy Policy</a>
                     <a class="text-lime-600" href="">Terms of Service</a>
                 </div>
-                <div class="text-right">
+                <div class="text-center lg:text-right">
                     <div class="pb-6">
                         STUDENTU KORPORĀCIJA SELONIJA BIEDRĪBA<br>
                         Reģ. Nr.:40008181369<br>
