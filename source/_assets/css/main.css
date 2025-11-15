@@ -8,3 +8,8 @@
     
     @apply font-bold text-red-700;
 }
+
+.gmap {
+    height: 400px;
+    width: 100%;
+}

@@ -24,5 +24,6 @@
         @yield('contacts')
         @yield('facebook-embed')
         <!--@yield('body2')-->
+        @yield('map')
     </body>
 </html>

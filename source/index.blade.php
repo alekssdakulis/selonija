@@ -152,7 +152,7 @@
 <div id="contacts" class="flex flex-col items-center justify-center bg-neutral-800">
     <h1 class="text-center font-bold text-4xl pt-25 text-white">Amatpersonas</h1>
     <span class="text-center text-xl text-lime-600 font-bold pt-3">Selonijas prezidijs</span>
-    <div class="w-full lg:w-1/2 pb-25">
+    <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 pb-25">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pl-1 pr-1 pt-8">
             @foreach ($prezidijs->sortBy('weight') as $amatpersona)
                     <div class="relative group">
@@ -161,10 +161,10 @@
                             alt="{{ $amatpersona->title ?? 'Selonijas galerijas attēls' }}"
                             class="w-full h-full object-cover grayscale-0 group-hover:grayscale transition duration-600">
                         </div>
-                        <span class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center font-bold text-xl text-lime-600 group-hover:hidden">{{ $amatpersona->name }}</span>
+                        <span class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center font-bold text-l text-lime-600 group-hover:hidden">{{ $amatpersona->name }}</span>
                         <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-60 transition duration-300 bg-neutral-800 bg-opacity-50">
-                            <h1 class="text-lime-300 text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $amatpersona->title }}</h1>
-                            <!--span class="text-neutral-300 px-8 text-sm text-center">{{ $amatpersona->name }}</span-->
+                        <h1 class="text-lime-300 text-xl font-bold text-center px-2 py-1 rounded pb-23 mt-auto">{{ $amatpersona->title }}</h1>
+                        <!--span class="text-neutral-300 px-8 text-sm text-center">{{ $amatpersona->name }}</span-->
                         </div>
                     </div>
                 
@@ -181,6 +181,152 @@
         <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/Selonija/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Selonija/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Selonija/">Selonija</a></blockquote></div>    
     </div>
 </div>
+@endsection
+
+@section('map')
+<!--section class="bg-neutral-800">
+    <div class="container">
+        <div class="row-columns row">
+            <div class="text-center-md col-contact column col-sm-6 col-md-4">
+            <div class="inner">
+                <div class="media-left">
+                <span class="icon text-primary icon-pencil"></span>
+                </div>
+                <div class="media-right">
+                <a class="debase64" href="#" data-mailto="cHJlemlkaWpzQHNlbG9uaWphLmx2">Please Enable JavaScript</a>
+                </div>
+            </div>
+            </div>
+            <div class="text-center-md col-contact column col-sm-6 col-md-4">
+                <div class="inner">
+                    <div class="media-left">
+                        <span class="icon text-primary icon-map-pin"></span>
+                    </div>
+                    <div class="media-right">
+                        Stabu iela 17 Rīga,
+                        <br> LV-1011. Latvija
+                    </div>
+                </div>
+            </div>
+            <div class="text-center-md col-contact column col-sm-6 col-md-4">
+                <div class="inner">
+                    <div class="media-left">
+                        <span class="icon text-primary icon-phone"></span>
+                    </div>
+                    <div class="media-right">
+                        Telefons: (371) 6727-3303
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section-->
+
+<div class="bg-neutral-800">
+    <div class="flex items-center justify-center">
+    <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+            <div class="p-12 flex items-center justify-center">
+                <div>
+                    <div>prezidijs@selonija.lv</div>
+                </div>
+            </div>
+            <div class="p-12 flex items-center justify-center">
+                <div>
+                    <div>Stabu iela 17 Rīga,<br>LV-1011.Latvija</div>
+                </div>
+            </div>
+            <div class="p-12 flex items-center justify-center">
+                <div>
+                    <div>Telefons: (+371) 6727-3303</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    <div class="gmap js-gmap" id="map"></div>
+    <div class="h-screen w-full flex flex-row bg-gradient-to-r from-blue-500 to-blue-500">
+        <div class="flex-shrink min-w-0 bg-blue-500"></div>
+        <div class="flex-shrink-0 w-1/2 bg-green-500"></div>
+        <div class="flex-shrink min-w-0 bg-blue-500"></div>
+    </div>
+</div>
+
+<script>
+        var map;
+        var image = 'img/map-label.png';
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 56.9576517,lng: 24.1256158},
+            zoom: 15,
+            styles: [{
+              "featureType": "road",
+              "stylers": [{
+                "color": "#333333"
+              }]
+            }, {
+              "featureType": "landscape",
+              "stylers": [{
+                "color": "#1F1F1F"
+              }]
+            }, {
+              "featureType": "water",
+              "stylers": [{
+                "color": "#D4B068"
+              }]
+            }, {
+              "elementType": "labels.text.fill",
+              "stylers": [{
+                "color": "#808080"
+              }]
+            }, {
+              "featureType": "poi",
+              "stylers": [{
+                "color": "#232323"
+              }]
+            }, {
+              "elementType": "labels.text",
+              "stylers": [{
+                "saturation": 1
+              }, {
+                "weight": 0.1
+              }, {
+                "color": "#999999"
+              }]
+            }]
+          });
+
+          marker = new google.maps.Marker({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: {lat: 56.9576517, lng: 24.1256158},
+            icon: image,
+            verticalAlign: 'bottom',
+            horizontalAlign: 'center',
+            backgroundColor: '#d3cfcf',
+            infoWindow: {
+              content: '<div class="map-info">Stabu 17, Rīga<br>Latvijas Republika</div>'
+            }
+          });
+
+        }
+        $('.debase64').each(function(){
+          var mail = window.atob($(this).data('mailto'));
+          $(this).attr("href", "mailto:"+mail);
+          $(this).html(mail);
+        });
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6QH29dnJtaXcwJui9pIIXe3RydftOAc&callback=initMap"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62276173-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', ['UA','62276173','1'].join('-'));
+    </script>
 @endsection
 
 @section('tester')

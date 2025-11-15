@@ -104,3 +104,23 @@ document.addEventListener('DOMContentLoaded', function() {
         //   console.log(this);
     // });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Google Map
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        const map = new google.maps.Map(mapElement, {
+            center: { lat: 56.9496, lng: 24.1052 }, // Coordinates for Stabu iela 17, Riga
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        // Optional: Add a marker
+        const marker = new google.maps.Marker({
+            position: { lat: 56.9496, lng: 24.1052 },
+            map: map,
+            title: 'Selonija'
+        });
+    }
+});
