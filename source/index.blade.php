@@ -2,7 +2,8 @@
 
 @section('navigation')
 <nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-center py-1 opacity-95  h-auto">
-    <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 flex m-auto items-center justify-center">
+    <!--Desktop-->
+    <div class="w-full sm:w-4/5 md:w-full lg:w-2/3 m-auto items-center justify-center hidden md:flex">
         <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
         <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
         <div class="space-x-1 text-stone-100 text-right">
@@ -10,8 +11,17 @@
             <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
             <a href="#calendar" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
             <a href="#contacts" class="px-1 hover:text-lime-600 transition">Kontakti</a>
-            <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
-            <!--<a class="navigation">test</a>-->
+            <a href="/zina" class="px-1 pr-3 hover:text-lime-600 transition">Ziņa administratoram</a>
+        </div>
+    </div>
+
+    <!--Mobile-->
+    <div class="w-full flex items-center justify-between md:hidden p-4">
+        <div class="text-lime-600 font-bold text-4xl">Selonija</div>
+        <div class="flex flex-col gap-1 cursor-pointer">
+            <span class="w-7 h-0.5 bg-white"></span>
+            <span class="w-7 h-0.5 bg-white"></span>
+            <span class="w-7 h-0.5 bg-white"></span>
         </div>
     </div>
 </nav>
