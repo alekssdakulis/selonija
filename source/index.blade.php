@@ -32,11 +32,10 @@
 @endsection
 
 @section('about')
-<div x-data="{readMore: false}" id="about" class="p-8 min-h-screen flex items-center">
-    <div class="flex-2"></div>
-    <div class="flex-3 text-center">
+<div x-data="{readMore: false}" id="about" class="pb-8 min-h-screen flex items-center justify-center">
+    <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-center">
         <img src="{{ vite('source/assets/images/gerbonis.png') }}" class="mx-auto mt-40" alt="gerbonis">
-        <h1 class="p-5 text-4xl font-bold">Draugam, Tēvijai<span class="p-15 text-lime-600">Virtute et Fide</span></h1>
+        <h1 class="p-5 text-4xl font-bold">Draugam, Tēvijai<br class="lg:hidden"><span class="pl-0 lg:pl-15 text-lime-600">Virtute et Fide</span></h1>
         <div class="pb-2">
             Selonija ir vecākā latviešu studentu korporācija Latvijā, tā ir dibināta 1880.gada 24.novembrī pie Rīgas Politehnikuma. Korporācijas dibināšanu noteica latviešu pieaugošā tieksme pēc neatkarības, pašapliecināšanās un latviskas identitātes. 19.gs. beigas iezīmē pārmaiņas sabiedrībā, latviešiem arvien vairāk apzinoties savas saknes un kopību, dibinot intelektuālas un komerciālas apvienības, ieņemot arvien augstāku stāvokli un vairojot savu turīgumu. Latviešu korporācijas dibināšana bija veids kā izrauties no līdz šim dominējošo vācbaltiešu aizbildniecības un aizspriedumiem, aizsākot pašiem savu ceļu. Selonijas dibinātāji bija Puriņu Klāva 1878.gadā dibinātā Draugu pulciņa dalībnieki, kuriem gadu vēlāk pievienojās 19 no vācu korporācijām Concordia Rigensis, Fraternitas Baltica, Rubonia un Borystenia izstājušies burši. To skaitā bija arī vairāki vācbaltieši.
         </div>
@@ -79,14 +78,13 @@
             </div>
         </div>
         <div class="p-5 cursor-pointer hover:underline text-lime-600" @click="readMore = ! readMore" x-text="readMore ? 'Lasīt mazāk' : 'Lasīt vairāk'">Lasīt vairāk</div>
-        <div class="flex justify-center items-center mt-6">
+        <div class="flex flex-col lg:flex-row justify-center items-center mt-6">
             <img src="{{ vite('source/assets/images/cepure.png') }}" class="mx-auto" alt="cepure">
             <img src="{{ vite('source/assets/images/vairogs.png') }}" class="mx-auto" alt="vairogs">
             <img src="{{ vite('source/assets/images/auseklis.png') }}" class="mx-auto" alt="auseklis">
             <img src="{{ vite('source/assets/images/cirkelis.png') }}" class="mx-auto" alt="cirkelis">
         </div>
     </div>
-    <div class="flex-2"></div>
 </div>
 @endsection
 
