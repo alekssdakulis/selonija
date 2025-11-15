@@ -89,7 +89,7 @@
 @endsection
 
 @section('gallery')
-<div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center bg-slate-100 min-h-screen">
+<div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
     <div class="flex w-full justify-center space-x-10 pt-11 uppercase font-bold">
         <span :class="filter === 'visas' ? 'text-lime-600' : ''"
@@ -105,7 +105,7 @@
               class="hover:text-lime-600 transition cursor-pointer"
               @click="filter = 'pasakumi'">pasākumi</span>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 pl-1 pr-1 pt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-8">
         @foreach ($photos as $photo)
             <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
                 <div class="relative group" @click=" selectedImage = '{{ vite($photo->image) }}'">
@@ -136,9 +136,9 @@
 
 @section('calendar')
 <div class="min-h-screen flex flex-col items-center justify-center pb-12" id="calendar">
-    <h1 class="text-center font-bold text-4xl pt-15">Seko līdzi</h1>
-    <div class="text-center text-xl pt-5 text-lime-600 font-bold">tuvākajiem pasākumiem Selonijā</div>
-    <div class="googleCalendar w-11/12 lg:w-3/5 wow fadeInLeft"><!-- col-md-12 col-lg-12 -->
+    <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
+    <div class="text-center text-xl pt-5 pb-8 text-lime-600 font-bold">tuvākajiem pasākumiem Selonijā</div>
+    <div class="googleCalendar w-full sm:w-4/5 md:w-4/5 lg:w-2/3 wow fadeInLeft"><!-- col-md-12 col-lg-12 -->
         <div id="full-calendar"></div>
     <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=lkmqpoa39ocrgap4u767r5gj7o%40group.calendar.google.com&amp;color=%232952A3&amp;src=1r88r3shdnm409er2vjtcqejq8%40group.calendar.google.com&amp;color=%23A32929&amp;src=h2lgqj5fggdhtl0ii1m5d71doo%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Europe%2FRiga" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe> -->
     <!-- <img src="img/arrow.png" alt="" class="img-responsive wow pull-right fadeInRight"> -->
@@ -182,44 +182,6 @@
 @endsection
 
 @section('map')
-<!--section class="bg-neutral-800">
-    <div class="container">
-        <div class="row-columns row">
-            <div class="text-center-md col-contact column col-sm-6 col-md-4">
-            <div class="inner">
-                <div class="media-left">
-                <span class="icon text-primary icon-pencil"></span>
-                </div>
-                <div class="media-right">
-                <a class="debase64" href="#" data-mailto="cHJlemlkaWpzQHNlbG9uaWphLmx2">Please Enable JavaScript</a>
-                </div>
-            </div>
-            </div>
-            <div class="text-center-md col-contact column col-sm-6 col-md-4">
-                <div class="inner">
-                    <div class="media-left">
-                        <span class="icon text-primary icon-map-pin"></span>
-                    </div>
-                    <div class="media-right">
-                        Stabu iela 17 Rīga,
-                        <br> LV-1011. Latvija
-                    </div>
-                </div>
-            </div>
-            <div class="text-center-md col-contact column col-sm-6 col-md-4">
-                <div class="inner">
-                    <div class="media-left">
-                        <span class="icon text-primary icon-phone"></span>
-                    </div>
-                    <div class="media-right">
-                        Telefons: (371) 6727-3303
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section-->
-
 <div class="bg-neutral-800">
     <div class="flex items-center justify-center">
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300">
