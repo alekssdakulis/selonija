@@ -1,19 +1,19 @@
 @extends('_layouts.main')
 
 @section('navigation')
-<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-between py-1 opacity-95  h-20">
-    <div class="flex-3"></div>
-    <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
-    <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
-    <div class="flex-5 space-x-1 text-stone-100 text-right">
-        <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
-        <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
-        <a href="#calendar" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
-        <a href="#contacts" class="px-1 hover:text-lime-600 transition">Kontakti</a>
-        <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
-        <!--<a class="navigation">test</a>-->
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-center py-1 opacity-95  h-auto">
+    <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 flex m-auto items-center justify-center">
+        <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
+        <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
+        <div class="space-x-1 text-stone-100 text-right">
+            <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
+            <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
+            <a href="#calendar" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
+            <a href="#contacts" class="px-1 hover:text-lime-600 transition">Kontakti</a>
+            <a href="/zina" class="px-1 hover:text-lime-600 transition">Ziņa administratoram</a>
+            <!--<a class="navigation">test</a>-->
+        </div>
     </div>
-    <div class="flex-3"></div>
 </nav>
 @endsection
 
