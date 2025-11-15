@@ -29,6 +29,7 @@
 //         });
 //     }
 // });
+import './icons';
 
 import { Calendar } from '@fullcalendar/core';
 import lvLocale from '@fullcalendar/core/locales/lv';
