@@ -1,7 +1,7 @@
 @extends('_layouts.main')
 
 @section('navigation')
-<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-between py-1 opacity-90  h-20">
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-between py-1 opacity-95  h-20">
     <div class="flex-3"></div>
     <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
     <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
@@ -224,32 +224,56 @@
 
 <div class="bg-neutral-800">
     <div class="flex items-center justify-center">
-    <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300">
-        <div class="grid grid-cols-1 lg:grid-cols-3">
-            <div class="p-12 flex items-center justify-center">
-                <div>
-                    <div>prezidijs@selonija.lv</div>
+        <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300">
+            <div class="grid grid-cols-1 lg:grid-cols-3">
+                <div class="p-12 flex items-center justify-center">
+                    <div>
+                        <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                    </div>
                 </div>
-            </div>
-            <div class="p-12 flex items-center justify-center">
-                <div>
-                    <div>Stabu iela 17 Rīga,<br>LV-1011.Latvija</div>
+                <div class="p-12 flex items-center justify-center">
+                    <div>
+                        <div>Stabu iela 17 Rīga,<br>LV-1011.Latvija</div>
+                    </div>
                 </div>
-            </div>
-            <div class="p-12 flex items-center justify-center">
-                <div>
-                    <div>Telefons: (+371) 6727-3303</div>
+                <div class="p-12 flex items-center justify-center">
+                    <div>
+                        <div>Telefons: (+371) 6727-3303</div>
+                    </div>
                 </div>
+                
             </div>
-            
         </div>
     </div>
-    </div>
     <div class="gmap js-gmap" id="map"></div>
-    <div class="h-screen w-full flex flex-row bg-gradient-to-r from-blue-500 to-blue-500">
-        <div class="flex-shrink min-w-0 bg-blue-500"></div>
-        <div class="flex-shrink-0 w-1/2 bg-green-500"></div>
-        <div class="flex-shrink min-w-0 bg-blue-500"></div>
+    <div class="flex flex-col items-center justify-center text-stone-300">
+        <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 h-auto pt-12 pb-10">
+                <div class="text-left flex flex-col">
+                    <a class="text-lime-600 pb-2" href="">Privacy Policy</a>
+                    <a class="text-lime-600" href="">Terms of Service</a>
+                </div>
+                <div class="text-right">
+                    <div class="pb-6">
+                        STUDENTU KORPORĀCIJA SELONIJA BIEDRĪBA<br>
+                        Reģ. Nr.:40008181369<br>
+                        LV29HABA0551036152947<br>
+                        Swedbank: HABALV22<br>
+                        <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                    </div>
+                    <div>
+                        KORPORĀCIJAS SELONIJA FILISTRU PALĪDZĪBAS BIEDRĪBA<br>
+                        Reģ. Nr.: 50008005671<br>
+                        LV34HABA0551026002874<br>
+                        Swedbank: HABALV22<br>
+                        <a class="text-lime-600" href="mailto:valde@selonija.lv">valde@selonija.lv</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center">
+            <div class="w-full text-center p-10 border-t border-t-text-stone-300"><span class="font-bold text-lime-600">Selonija</span> © 1880-2025. Visas tiesības aizsargātas.</div>
+        </div>
     </div>
 </div>
 
