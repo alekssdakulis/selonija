@@ -198,25 +198,25 @@
 @section('map')
 <div class="bg-neutral-800">
     <div class="flex items-center justify-center">
-        <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300">
-            <div class="grid grid-cols-1 lg:grid-cols-3">
-                <div class="p-12 lg:pl-0 flex items-center justify-center lg:justify-start">
-                    <div>
+        <div class="
+                w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300
+                flex justify-evenly py-20 max-sm:flex-col gap-10
+                ">
+                <div class="flex gap-4 items-center">
+                        <i data-lucide="mail" class="size-[60px] text-accent"></i>
                         <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
-                    </div>
                 </div>
-                <div class="p-12 flex items-center justify-center">
-                    <div>
-                        <div>Stabu iela 17 Rīga,<br>LV-1011.Latvija</div>
-                    </div>
+                <div class="flex gap-4 items-center">
+                        <i data-lucide="map-pin" class="size-[60px] text-accent"></i>
+                        <div>
+                            <p>Stabu iela 17</p>
+                            <p>Rīga</p>
+                        </div>
                 </div>
-                <div class="p-12 lg:pr-0 flex items-center justify-center lg:justify-end">
-                    <div>
+                <div class="flex gap-4 items-center">
+                        <i data-lucide="phone" class="size-[60px] text-accent"></i>
                         <div>Telefons: (+371) 6727-3303</div>
-                    </div>
                 </div>
-                
-            </div>
         </div>
     </div>
     <div class="gmap js-gmap" id="map"></div>
