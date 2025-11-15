@@ -16,16 +16,27 @@
     </div>
 
     <!--Mobile-->
-    <div class="w-full flex items-center justify-between md:hidden p-1">
-        <a href="#landing" class="flex flex-row items-center">
-            <img src="{{ vite('source/assets/images/brand.png') }}" class="h-15" alt="brand">
-            <div class="text-lime-600 font-bold text-3xl">Selonija</div>
-</a>
-        
-        <div class="flex flex-col gap-1 cursor-pointer pr-5">
-            <span class="w-7 h-0.5 bg-white"></span>
-            <span class="w-7 h-0.5 bg-white"></span>
-            <span class="w-7 h-0.5 bg-white"></span>
+    <div x-data="{showDropdown: false}" class="w-full flex flex-col items-center justify-between md:hidden p-1">
+        <div class="w-full flex items-center justify-between">
+            <a href="#landing" class="flex flex-row items-center">
+                <img src="{{ vite('source/assets/images/brand.png') }}" class="h-15" alt="brand">
+                <div class="text-lime-600 font-bold text-3xl">Selonija</div>
+            </a>
+            
+            <div class="flex flex-col gap-1 cursor-pointer pr-5" @click="showDropdown = ! showDropdown">
+                <span class="w-7 h-0.5 bg-white"></span>
+                <span class="w-7 h-0.5 bg-white"></span>
+                <span class="w-7 h-0.5 bg-white"></span>
+            </div>
+        </div>
+        <div x-show="showDropdown" class="w-full mt-2 text-stone-100 justify-start px-5">
+            <ul>
+                <li class="p-5 border-t border-t-stone-500"><a href="#about" @click="showDropdown = ! showDropdown">Par Mums</a></li>
+                <li class="p-5 border-t border-t-stone-500"><a href="#gallery" @click="showDropdown = ! showDropdown">Galerija</a></li>
+                <li class="p-5 border-t border-t-stone-500"><a href="#calendar" @click="showDropdown = ! showDropdown">Kalendārs</a></li>
+                <li class="p-5 border-t border-t-stone-500"><a href="#contacts" @click="showDropdown = ! showDropdown">Kontakti</a></li>
+                <li class="p-5 border-t border-t-stone-500"><a href="/zina" @click="showDropdown = ! showDropdown">Ziņa administratoram</a></li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -254,7 +265,7 @@
             </div>
         </div>
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center" x-data="{ currentYear: new Date().getFullYear() }">
-            <div class="w-full text-center p-10 border-t border-t-text-stone-300"><span class="font-bold text-lime-600">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
+            <div class="w-full text-center p-10 border-t border-t-stone-300"><span class="font-bold text-lime-600">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
         </div>
     </div>
 </div>
