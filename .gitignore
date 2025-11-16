@@ -1,4 +1,4 @@
-/build_local/
+/build_*/
 /cache/
 /node_modules/
 /vendor/
@@ -6,8 +6,10 @@
 /.vscode/
 npm-debug.log
 hot
+/.env
 
 # Optional ignores
 # /build_staging/
 # /build_production/
 # /source/assets/build/
+/source/assets/build/
