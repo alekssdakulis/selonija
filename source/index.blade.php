@@ -4,7 +4,7 @@
 <nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-center py-1 opacity-95  h-auto">
     <!--Desktop-->
     <div class="w-full sm:w-4/5 md:w-full lg:w-2/3 m-auto items-center justify-center hidden md:flex">
-        <img src="{{ vite('source/assets/images/brand.png') }}" class="h-20" alt="brand">
+        <img src="/assets/images/brand.png" class="h-20" alt="brand">
         <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
         <div class="space-x-1 text-stone-100 text-right">
             <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
@@ -19,7 +19,7 @@
     <div x-data="{showDropdown: false}" class="w-full flex flex-col items-center justify-between md:hidden p-1">
         <div class="w-full flex items-center justify-between">
             <a href="#landing" class="flex flex-row items-center">
-                <img src="{{ vite('source/assets/images/brand.png') }}" class="h-15" alt="brand">
+                <img src="/assets/images/brand.png" class="h-15" alt="brand">
                 <div class="text-lime-600 font-bold text-3xl">Selonija</div>
             </a>
             
@@ -44,7 +44,7 @@
 
 @section('landing')
 <div id="landing" class="p-8 bg-cover bg-center h-[100vh] flex items-center grayscale-[40%]"
-    style="background-image: url('{{ vite('source/assets/images/slide1.jpg') }}');">
+    style="background-image: url('/assets/images/slide1.jpg');">
     <div class="flex-3"></div>
     <div class="flex-2 text-stone-100 text-center">
         <h2 class="float-center text-6xl p-8">Laipni lūgts <span class="text-lime-600">Selonijā</span></h2>
@@ -59,7 +59,7 @@
 @section('about')
 <div x-data="{readMore: false}" id="about" class="pb-8 min-h-screen flex items-center justify-center">
     <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-center">
-        <img src="{{ vite('source/assets/images/gerbonis.png') }}" class="mx-auto mt-40" alt="gerbonis">
+        <img src="/assets/images/gerbonis.png" class="mx-auto mt-40" alt="gerbonis">
         <h1 class="p-5 text-4xl font-bold">Draugam, Tēvijai<br class="lg:hidden"><span class="pl-0 lg:pl-15 text-lime-600">Virtute et Fide</span></h1>
         <div class="pb-2">
             Selonija ir vecākā latviešu studentu korporācija Latvijā, tā ir dibināta 1880.gada 24.novembrī pie Rīgas Politehnikuma. Korporācijas dibināšanu noteica latviešu pieaugošā tieksme pēc neatkarības, pašapliecināšanās un latviskas identitātes. 19.gs. beigas iezīmē pārmaiņas sabiedrībā, latviešiem arvien vairāk apzinoties savas saknes un kopību, dibinot intelektuālas un komerciālas apvienības, ieņemot arvien augstāku stāvokli un vairojot savu turīgumu. Latviešu korporācijas dibināšana bija veids kā izrauties no līdz šim dominējošo vācbaltiešu aizbildniecības un aizspriedumiem, aizsākot pašiem savu ceļu. Selonijas dibinātāji bija Puriņu Klāva 1878.gadā dibinātā Draugu pulciņa dalībnieki, kuriem gadu vēlāk pievienojās 19 no vācu korporācijām Concordia Rigensis, Fraternitas Baltica, Rubonia un Borystenia izstājušies burši. To skaitā bija arī vairāki vācbaltieši.
@@ -104,10 +104,10 @@
         </div>
         <div class="p-5 cursor-pointer hover:underline text-lime-600" @click="readMore = ! readMore" x-text="readMore ? 'Lasīt mazāk' : 'Lasīt vairāk'">Lasīt vairāk</div>
         <div class="flex flex-col lg:flex-row justify-center items-center mt-6">
-            <img src="{{ vite('source/assets/images/cepure.png') }}" class="mx-auto" alt="cepure">
-            <img src="{{ vite('source/assets/images/vairogs.png') }}" class="mx-auto" alt="vairogs">
-            <img src="{{ vite('source/assets/images/auseklis.png') }}" class="mx-auto" alt="auseklis">
-            <img src="{{ vite('source/assets/images/cirkelis.png') }}" class="mx-auto" alt="cirkelis">
+            <img src="/assets/images/cepure.png" class="mx-auto" alt="cepure">
+            <img src="/assets/images/vairogs.png" class="mx-auto" alt="vairogs">
+            <img src="/assets/images/auseklis.png" class="mx-auto" alt="auseklis">
+            <img src="/assets/images/cirkelis.png" class="mx-auto" alt="cirkelis">
         </div>
     </div>
 </div>
@@ -133,8 +133,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-8">
         @foreach ($photos as $photo)
             <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
-                <div class="relative group" @click=" selectedImage = '{{ vite($photo->image) }}'">
-                    <img src="{{ vite($photo->image) }}"
+                <div class="relative group" @click=" selectedImage = '{{ $photo->image }}'">
+                    <img src="{{ $photo->image }}"
                          alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
                          class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
                     <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
@@ -180,7 +180,7 @@
             @foreach ($prezidijs->sortBy('weight') as $amatpersona)
                     <div class="relative group">
                         <div>
-                        <img src="{{ vite($amatpersona->image) }}"
+                        <img src="{{ $amatpersona->image }}"
                             alt="{{ $amatpersona->title ?? 'Selonijas galerijas attēls' }}"
                             class="w-full h-full object-cover grayscale-0 group-hover:grayscale transition duration-600">
                         </div>
@@ -214,18 +214,18 @@
                 flex justify-evenly py-20 max-sm:flex-col gap-10
                 ">
                 <div class="flex gap-4 items-center">
-                        <i data-lucide="mail" class="size-[60px] text-accent"></i>
+                        <i data-lucide="mail" class="size-[60px] text-accent stroke-1"></i>
                         <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
                 </div>
                 <div class="flex gap-4 items-center">
-                        <i data-lucide="map-pin" class="size-[60px] text-accent"></i>
+                        <i data-lucide="map-pin" class="size-[60px] text-accent stroke-1"></i>
                         <div>
                             <p>Stabu iela 17</p>
                             <p>Rīga</p>
                         </div>
                 </div>
                 <div class="flex gap-4 items-center">
-                        <i data-lucide="phone" class="size-[60px] text-accent"></i>
+                        <i data-lucide="phone" class="size-[60px] text-accent stroke-1"></i>
                         <div>Telefons: (+371) 6727-3303</div>
                 </div>
         </div>
@@ -237,10 +237,10 @@
                 <div class="text-center lg:text-left flex flex-col">
                     <div class="flex gap-4 pb-2 justify-center lg:justify-start">
                         <a href="http://www.pk.lv/">
-                            <img src="{{ vite('source/assets/images/pk.png') }}" alt="PK logo" class="h-10">
+                            <img src="/assets/images/pk.png" alt="PK logo" class="h-10">
                         </a>
                         <a href="http://www.spk.lv/">
-                            <img src="{{ vite('source/assets/images/spk.png') }}" alt="SPK logo" class="h-10">
+                            <img src="/assets/images/spk.png" alt="SPK logo" class="h-10">
                         </a>
                     </div>
                     <a class="text-lime-600 pb-2" href="">Privacy Policy</a>

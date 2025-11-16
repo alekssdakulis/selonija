@@ -1,6 +1,6 @@
 ---
 title: Stabu iela 17
 description: Foto
-image: source/_photos/stabu_iela/8.jpg
+image: /assets/photos/8.jpg
 tag: seli
 ---
