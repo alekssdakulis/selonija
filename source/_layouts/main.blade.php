@@ -17,13 +17,14 @@
     <body class="text-gray-900 font-roboto antialiased text-[15px]">
         @yield('navigation')
         @yield('landing')
-        <!--@yield('tester')-->
         @yield('about')
         @yield('gallery')
         @yield('calendar')
         @yield('contacts')
         @yield('facebook-embed')
-        <!--@yield('body2')-->
         @yield('map')
+
+        @yield('privacy-policy')
+        @yield('terms-of-service')
     </body>
 </html>

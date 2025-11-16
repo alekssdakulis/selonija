@@ -249,8 +249,8 @@
                             <img src="/assets/images/spk.png" alt="SPK logo" class="h-10">
                         </a>
                     </div>
-                    <a class="text-accent pb-2" href="">Privacy Policy</a>
-                    <a class="text-accent" href="">Terms of Service</a>
+                    <a class="text-accent pb-2" href="/privacy-policy">Privacy Policy</a>
+                    <a class="text-accent" href="/terms-of-service">Terms of Service</a>
                 </div>
                 <div class="text-center lg:text-right">
                     <div class="pb-6">
