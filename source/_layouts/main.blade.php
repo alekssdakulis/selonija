@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
         <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/lv_LV/sdk.js#xfbml=1&version=v18.0"></script>
     </head>

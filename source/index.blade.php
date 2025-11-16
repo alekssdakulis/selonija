@@ -160,15 +160,13 @@
 @endsection
 
 @section('calendar')
-<div class="min-h-screen flex flex-col items-center justify-center pb-12" id="calendar">
-    <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
-    <div class="text-center text-xl pt-5 pb-8 text-accent font-bold">tuvākajiem pasākumiem Selonijā</div>
-    <div class="googleCalendar w-full sm:w-4/5 md:w-4/5 lg:w-2/3 wow fadeInLeft"><!-- col-md-12 col-lg-12 -->
-        <div id="full-calendar"></div>
-    <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=lkmqpoa39ocrgap4u767r5gj7o%40group.calendar.google.com&amp;color=%232952A3&amp;src=1r88r3shdnm409er2vjtcqejq8%40group.calendar.google.com&amp;color=%23A32929&amp;src=h2lgqj5fggdhtl0ii1m5d71doo%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Europe%2FRiga" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe> -->
-    <!-- <img src="img/arrow.png" alt="" class="img-responsive wow pull-right fadeInRight"> -->
+    <div class="min-h-screen flex flex-col items-center justify-center pb-12">
+        <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
+        <div class="text-center text-xl pt-5 pb-8 text-accent font-bold">tuvākajiem pasākumiem Selonijā</div>
+        <div class="max-w-7xl w-full " x-data="fullCalendar">
+            <div x-ref="calendar"></div>
+        </div>
     </div>
-</div>
 @endsection
 
 @section('contacts')
@@ -334,11 +332,11 @@
           });
 
         }
-        $('.debase64').each(function(){
-          var mail = window.atob($(this).data('mailto'));
-          $(this).attr("href", "mailto:"+mail);
-          $(this).html(mail);
-        });
+        // $('.debase64').each(function(){
+        //   var mail = window.atob($(this).data('mailto'));
+        //   $(this).attr("href", "mailto:"+mail);
+        //   $(this).html(mail);
+        // });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6QH29dnJtaXcwJui9pIIXe3RydftOAc&callback=initMap"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
