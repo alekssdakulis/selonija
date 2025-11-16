@@ -116,7 +116,7 @@
 @section('gallery')
 <div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
-    <div class="flex w-full justify-center space-x-10 pt-11 uppercase font-bold">
+    <div class="flex w-full justify-center space-x-6 pt-11 uppercase font-bold">
         <span :class="filter === 'visas' ? 'text-lime-600' : ''"
               class="hover:text-lime-600 transition cursor-pointer"
               @click="filter = 'visas'">visas</span>
@@ -131,7 +131,7 @@
               @click="filter = 'pasakumi'">pasākumi</span>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-8">
-        @foreach ($photos as $photo)
+        @foreach ($photos->sortBy('weight') as $photo)
             <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
                 <div class="relative group" @click=" selectedImage = '{{ $photo->image }}'">
                     <img src="{{ $photo->image }}"
