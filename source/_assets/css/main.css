@@ -15,5 +15,9 @@
 }
 
 @theme {
-    --color-accent: var(--color-lime-600);
+    /*
+        Zaļš: Pantone PMS 376, hex #84bd00
+        Sarkans: PMS 200, hex #ba0c2f
+     */
+    --color-accent: #84bd00;
 }
