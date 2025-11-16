@@ -5,13 +5,13 @@
     <!--Desktop-->
     <div class="w-full sm:w-4/5 md:w-full lg:w-2/3 m-auto items-center justify-center hidden md:flex">
         <img src="/assets/images/brand.png" class="h-20" alt="brand">
-        <a href="#landing" class="flex-1 text-4xl font-bold text-lime-600">Selonija</a>
+        <a href="#landing" class="flex-1 text-4xl font-bold text-accent">Selonija</a>
         <div class="space-x-1 text-stone-100 text-right">
-            <a href="#about" class="px-1 hover:text-lime-600 transition">Par Mums</a>
-            <a href="#gallery" class="px-1 hover:text-lime-600 transition">Galerija</a>
-            <a href="#calendar" class="px-1 hover:text-lime-600 transition">Kalendārs</a>
-            <a href="#contacts" class="px-1 hover:text-lime-600 transition">Kontakti</a>
-            <a href="/zina" class="px-1 pr-3 hover:text-lime-600 transition">Ziņa administratoram</a>
+            <a href="#about" class="px-1 hover:text-accent transition">Par Mums</a>
+            <a href="#gallery" class="px-1 hover:text-accent transition">Galerija</a>
+            <a href="#calendar" class="px-1 hover:text-accent transition">Kalendārs</a>
+            <a href="#contacts" class="px-1 hover:text-accent transition">Kontakti</a>
+            <a href="/zina" class="px-1 pr-3 hover:text-accent transition">Ziņa administratoram</a>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
         <div class="w-full flex items-center justify-between">
             <a href="#landing" class="flex flex-row items-center">
                 <img src="/assets/images/brand.png" class="h-15" alt="brand">
-                <div class="text-lime-600 font-bold text-3xl">Selonija</div>
+                <div class="text-accent font-bold text-3xl">Selonija</div>
             </a>
             
             <div class="flex flex-col gap-1 cursor-pointer pr-5" @click="showDropdown = ! showDropdown">
@@ -31,11 +31,11 @@
         </div>
         <div x-show="showDropdown" class="w-full mt-2 text-stone-100 justify-start px-5">
             <ul>
-                <li class="p-5 border-t border-t-stone-500"><a href="#about" @click="showDropdown = ! showDropdown">Par Mums</a></li>
-                <li class="p-5 border-t border-t-stone-500"><a href="#gallery" @click="showDropdown = ! showDropdown">Galerija</a></li>
-                <li class="p-5 border-t border-t-stone-500"><a href="#calendar" @click="showDropdown = ! showDropdown">Kalendārs</a></li>
-                <li class="p-5 border-t border-t-stone-500"><a href="#contacts" @click="showDropdown = ! showDropdown">Kontakti</a></li>
-                <li class="p-5 border-t border-t-stone-500"><a href="/zina" @click="showDropdown = ! showDropdown">Ziņa administratoram</a></li>
+                <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#about" @click="showDropdown = ! showDropdown">Par Mums</a></li>
+                <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#gallery" @click="showDropdown = ! showDropdown">Galerija</a></li>
+                <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#calendar" @click="showDropdown = ! showDropdown">Kalendārs</a></li>
+                <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#contacts" @click="showDropdown = ! showDropdown">Kontakti</a></li>
+                <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="/zina" @click="showDropdown = ! showDropdown">Ziņa administratoram</a></li>
             </ul>
         </div>
     </div>
@@ -47,7 +47,7 @@
     style="background-image: url('/assets/images/slide1.jpg');">
     <div class="flex-3"></div>
     <div class="flex-2 text-stone-100 text-center">
-        <h2 class="float-center text-6xl p-8">Laipni lūgts <span class="text-lime-600">Selonijā</span></h2>
+        <h2 class="float-center text-6xl p-8">Laipni lūgts <span class="text-accent">Selonijā</span></h2>
         <div class="text-stone-300">
             Studentu korporācija Selonija ir akadēmiska mūža brālība ar mērķi attītstīt un atbalstīt savas sabiedrības locekļus, audzinot tos goda, augstas pašapziņas un latvietības vērtībās, kas ir svarīgas brīvas Latvijas valsts izaugsmei un ilgtspējīgai, uz mērķi orientētai attīstībai. Selonija sastāv no Selonijas konventa un Filistru biedrības.
         </div>
@@ -60,7 +60,7 @@
 <div x-data="{readMore: false}" id="about" class="pb-8 min-h-screen flex items-center justify-center">
     <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-center">
         <img src="/assets/images/gerbonis.png" class="mx-auto mt-40" alt="gerbonis">
-        <h1 class="p-5 text-4xl font-bold">Draugam, Tēvijai<br class="lg:hidden"><span class="pl-0 lg:pl-15 text-lime-600">Virtute et Fide</span></h1>
+        <h1 class="p-5 text-4xl font-bold">Draugam, Tēvijai<br class="lg:hidden"><span class="pl-0 lg:pl-15 text-accent">Virtute et Fide</span></h1>
         <div class="pb-2">
             Selonija ir vecākā latviešu studentu korporācija Latvijā, tā ir dibināta 1880.gada 24.novembrī pie Rīgas Politehnikuma. Korporācijas dibināšanu noteica latviešu pieaugošā tieksme pēc neatkarības, pašapliecināšanās un latviskas identitātes. 19.gs. beigas iezīmē pārmaiņas sabiedrībā, latviešiem arvien vairāk apzinoties savas saknes un kopību, dibinot intelektuālas un komerciālas apvienības, ieņemot arvien augstāku stāvokli un vairojot savu turīgumu. Latviešu korporācijas dibināšana bija veids kā izrauties no līdz šim dominējošo vācbaltiešu aizbildniecības un aizspriedumiem, aizsākot pašiem savu ceļu. Selonijas dibinātāji bija Puriņu Klāva 1878.gadā dibinātā Draugu pulciņa dalībnieki, kuriem gadu vēlāk pievienojās 19 no vācu korporācijām Concordia Rigensis, Fraternitas Baltica, Rubonia un Borystenia izstājušies burši. To skaitā bija arī vairāki vācbaltieši.
         </div>
@@ -102,7 +102,7 @@
                 Līdz ar tautas atmodu un PSRS sabrukuma iesākumu, Selonijai 1989. gadā izdodas atjaunot darbību pie Rīgas Politehniskā institūta (tagadējās Rīgas Tehniskā universitātes). Tiek turpinātas sen iedzīvinātās Selonijas tradīcijas, caur patriotismu un godprātību veicinot katra sabiedrības locekļa un Latvijas izaugsmi kopumā. Selonijas komāna garanti ir Fraternitas Vesthardiana, Salgalia, Fraternitas Imantica, Gersicania, Fraternitas Vanenica un Vendia.
             </div>
         </div>
-        <div class="p-5 cursor-pointer hover:underline text-lime-600" @click="readMore = ! readMore" x-text="readMore ? 'Lasīt mazāk' : 'Lasīt vairāk'">Lasīt vairāk</div>
+        <div class="p-5 cursor-pointer hover:underline text-accent" @click="readMore = ! readMore" x-text="readMore ? 'Lasīt mazāk' : 'Lasīt vairāk'">Lasīt vairāk</div>
         <div class="flex flex-col lg:flex-row justify-center items-center mt-6">
             <img src="/assets/images/cepure.png" class="mx-auto" alt="cepure">
             <img src="/assets/images/vairogs.png" class="mx-auto" alt="vairogs">
@@ -117,17 +117,17 @@
 <div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
     <div class="flex w-full justify-center space-x-6 pt-11 uppercase font-bold">
-        <span :class="filter === 'visas' ? 'text-lime-600' : ''"
-              class="hover:text-lime-600 transition cursor-pointer"
+        <span :class="filter === 'visas' ? 'text-accent' : ''"
+              class="hover:text-accent transition cursor-pointer"
               @click="filter = 'visas'">visas</span>
-        <span :class="filter === 'seli' ? 'text-lime-600' : ''"
-              class="hover:text-lime-600 transition cursor-pointer"
+        <span :class="filter === 'seli' ? 'text-accent' : ''"
+              class="hover:text-accent transition cursor-pointer"
               @click="filter = 'seli'">sēļi</span>
-        <span :class="filter === 'simboli' ? 'text-lime-600' : ''"
-              class="hover:text-lime-600 transition cursor-pointer"
+        <span :class="filter === 'simboli' ? 'text-accent' : ''"
+              class="hover:text-accent transition cursor-pointer"
               @click="filter = 'simboli'">simboli un vēsture</span>
-        <span :class="filter === 'pasakumi' ? 'text-lime-600' : ''"
-              class="hover:text-lime-600 transition cursor-pointer"
+        <span :class="filter === 'pasakumi' ? 'text-accent' : ''"
+              class="hover:text-accent transition cursor-pointer"
               @click="filter = 'pasakumi'">pasākumi</span>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-8">
@@ -138,7 +138,7 @@
                          alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
                          class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
                     <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
-                        <h1 class="text-lime-600 text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $photo->title }}</h1>
+                        <h1 class="text-accent text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $photo->title }}</h1>
                         <span class="text-neutral-300 px-8 text-sm text-center">{{ $photo->description }}</span>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
     <!--<div class="w-full h-full bg-bla boldck"></div>    -->
         <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/85"><!-- @click.stop-->
             <div class="relative bg-white rounded-lg max-w-5xl max-h-[90vh] overflow-hidden w-11/12">
-                <button @click="selectedImage = null" class="absolute top-4 right-4 bg-lime-600 text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
+                <button @click="selectedImage = null" class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded font-bold text-xl hover:bg-lime-700 z-10">×</button>
                 <img :src="selectedImage" class="w-full h-auto object-contain max-w-[100%] max-h-[100%]" @click.stop>
             </div>
         </div>
@@ -162,7 +162,7 @@
 @section('calendar')
 <div class="min-h-screen flex flex-col items-center justify-center pb-12" id="calendar">
     <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
-    <div class="text-center text-xl pt-5 pb-8 text-lime-600 font-bold">tuvākajiem pasākumiem Selonijā</div>
+    <div class="text-center text-xl pt-5 pb-8 text-accent font-bold">tuvākajiem pasākumiem Selonijā</div>
     <div class="googleCalendar w-full sm:w-4/5 md:w-4/5 lg:w-2/3 wow fadeInLeft"><!-- col-md-12 col-lg-12 -->
         <div id="full-calendar"></div>
     <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=lkmqpoa39ocrgap4u767r5gj7o%40group.calendar.google.com&amp;color=%232952A3&amp;src=1r88r3shdnm409er2vjtcqejq8%40group.calendar.google.com&amp;color=%23A32929&amp;src=h2lgqj5fggdhtl0ii1m5d71doo%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Europe%2FRiga" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe> -->
@@ -174,7 +174,7 @@
 @section('contacts')
 <div id="contacts" class="flex flex-col items-center justify-center bg-neutral-800">
     <h1 class="text-center font-bold text-4xl pt-25 text-white">Amatpersonas</h1>
-    <span class="text-center text-xl text-lime-600 font-bold pt-3">Selonijas prezidijs</span>
+    <span class="text-center text-xl text-accent font-bold pt-3">Selonijas prezidijs</span>
     <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 pb-25">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pl-1 pr-1 pt-8">
             @foreach ($prezidijs->sortBy('weight') as $amatpersona)
@@ -184,9 +184,9 @@
                             alt="{{ $amatpersona->title ?? 'Selonijas galerijas attēls' }}"
                             class="w-full h-full object-cover grayscale-0 group-hover:grayscale transition duration-600">
                         </div>
-                        <span class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center font-bold text-l text-lime-600 group-hover:hidden">{{ $amatpersona->name }}</span>
+                        <span class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center font-bold text-l text-accent group-hover:hidden">{{ $amatpersona->name }}</span>
                         <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-60 transition duration-300 bg-neutral-800 bg-opacity-50">
-                        <h1 class="text-lime-300 text-xl font-bold text-center px-2 py-1 rounded pb-23 mt-auto">{{ $amatpersona->title }}</h1>
+                        <h1 class="text-accent text-xl font-bold text-center px-2 py-1 rounded pb-23 mt-auto">{{ $amatpersona->title }}</h1>
                         <!--span class="text-neutral-300 px-8 text-sm text-center">{{ $amatpersona->name }}</span-->
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                 ">
                 <div class="flex gap-4 items-center">
                         <i data-lucide="mail" class="size-[60px] text-accent stroke-1"></i>
-                        <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                        <a class="text-accent" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
                 </div>
                 <div class="flex gap-4 items-center">
                         <i data-lucide="map-pin" class="size-[60px] text-accent stroke-1"></i>
@@ -236,6 +236,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 h-auto pt-12 pb-10">
                 <div class="text-center lg:text-left flex flex-col">
                     <div class="flex gap-4 pb-2 justify-center lg:justify-start">
+                        <a href="https://x.com/selonija" alt="Twitter" class="h-10 w-10 text-accent flex justify-center items-center border-2 rounded-full">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Selonija/" alt="Facebook" class="h-10 w-10 text-accent flex justify-center items-center border-2 rounded-full">
+                            <i data-lucide="facebook"></i>
+                        </a>
                         <a href="http://www.pk.lv/">
                             <img src="/assets/images/pk.png" alt="PK logo" class="h-10">
                         </a>
@@ -243,8 +249,8 @@
                             <img src="/assets/images/spk.png" alt="SPK logo" class="h-10">
                         </a>
                     </div>
-                    <a class="text-lime-600 pb-2" href="">Privacy Policy</a>
-                    <a class="text-lime-600" href="">Terms of Service</a>
+                    <a class="text-accent pb-2" href="">Privacy Policy</a>
+                    <a class="text-accent" href="">Terms of Service</a>
                 </div>
                 <div class="text-center lg:text-right">
                     <div class="pb-6">
@@ -252,20 +258,20 @@
                         Reģ. Nr.:40008181369<br>
                         LV29HABA0551036152947<br>
                         Swedbank: HABALV22<br>
-                        <a class="text-lime-600" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                        <a class="text-accent" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
                     </div>
                     <div>
                         KORPORĀCIJAS SELONIJA FILISTRU PALĪDZĪBAS BIEDRĪBA<br>
                         Reģ. Nr.: 50008005671<br>
                         LV34HABA0551026002874<br>
                         Swedbank: HABALV22<br>
-                        <a class="text-lime-600" href="mailto:valde@selonija.lv">valde@selonija.lv</a>
+                        <a class="text-accent" href="mailto:valde@selonija.lv">valde@selonija.lv</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center" x-data="{ currentYear: new Date().getFullYear() }">
-            <div class="w-full text-center p-10 border-t border-t-stone-300"><span class="font-bold text-lime-600">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
+            <div class="w-full text-center p-10 border-t border-t-stone-300"><span class="font-bold text-accent">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
         </div>
     </div>
 </div>
