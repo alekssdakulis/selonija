@@ -40,6 +40,12 @@ document.addEventListener('alpine:init', () => {
 window.Alpine = Alpine
 Alpine.start();
 
+document.querySelectorAll('[data-mailto]').forEach(el => {
+    const mail = atob(atob(el.dataset.mailto));
+    el.href = `mailto:${mail}`;
+    el.textContent = mail;
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Google Map
     const mapElement = document.getElementById('map');

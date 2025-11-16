@@ -213,7 +213,7 @@
                 ">
                 <div class="flex gap-4 items-center">
                         <i data-lucide="mail" class="size-[60px] text-accent stroke-1"></i>
-                        <a class="text-accent" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                        <a class="text-accent" data-mailto="{{ base64_encode(base64_encode('prezidijs@selonija.lv')) }}"></a>
                 </div>
                 <div class="flex gap-4 items-center">
                         <i data-lucide="map-pin" class="size-[60px] text-accent stroke-1"></i>
@@ -256,14 +256,14 @@
                         Reģ. Nr.:40008181369<br>
                         LV29HABA0551036152947<br>
                         Swedbank: HABALV22<br>
-                        <a class="text-accent" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                        <a class="text-accent" data-mailto="{{ base64_encode(base64_encode('prezidijs@selonija.lv')) }}"></a>
                     </div>
                     <div>
                         KORPORĀCIJAS SELONIJA FILISTRU PALĪDZĪBAS BIEDRĪBA<br>
                         Reģ. Nr.: 50008005671<br>
                         LV34HABA0551026002874<br>
                         Swedbank: HABALV22<br>
-                        <a class="text-accent" href="mailto:valde@selonija.lv">valde@selonija.lv</a>
+                        <a class="text-accent" data-mailto="{{ base64_encode(base64_encode('valde@selonija.lv')) }}"></a>
                     </div>
                 </div>
             </div>
@@ -332,11 +332,6 @@
           });
 
         }
-        // $('.debase64').each(function(){
-        //   var mail = window.atob($(this).data('mailto'));
-        //   $(this).attr("href", "mailto:"+mail);
-        //   $(this).html(mail);
-        // });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6QH29dnJtaXcwJui9pIIXe3RydftOAc&callback=initMap"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
