@@ -5,7 +5,7 @@
     <!--Desktop-->
     <div class="w-full sm:w-4/5 md:w-full lg:w-2/3 m-auto items-center justify-center hidden md:flex">
         <img src="/assets/images/brand.png" class="h-20" alt="brand">
-        <a href="#landing" class="flex-1 text-4xl font-bold text-accent">Selonija</a>
+        <a href="#landing" class="flex-1 text-4xl font-serif text-accent">Selonija</a>
         <div class="space-x-1 text-stone-100 text-right">
             <a href="#about" class="px-1 hover:text-accent transition">Par Mums</a>
             <a href="#gallery" class="px-1 hover:text-accent transition">Galerija</a>
@@ -160,7 +160,7 @@
 @endsection
 
 @section('calendar')
-    <div class="min-h-screen flex flex-col items-center justify-center pb-12">
+    <div id="calendar" class="min-h-screen flex flex-col items-center justify-center pb-12">
         <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
         <div class="text-center text-xl pt-5 pb-8 text-accent font-bold">tuvākajiem pasākumiem Selonijā</div>
         <div class="max-w-7xl w-full " x-data="fullCalendar">

@@ -1,11 +1,8 @@
+@import "./custom-fonts.css" layer(base);
 @import "tailwindcss";
-
-.font-roboto {
-    font-family: 'Roboto', sans-serif;
-}
+@import "./custom-base.css" layer(base);
 
 .navigation {
-    
     @apply font-bold text-red-700;
 }
 
@@ -15,6 +12,9 @@
 }
 
 @theme {
+    --font-sans: 'Noto Sans', sans-serif;
+    --font-serif: 'Noto Serif', serif;
+
     /*
         Zaļš: Pantone PMS 376, hex #84bd00
         Sarkans: PMS 200, hex #ba0c2f
