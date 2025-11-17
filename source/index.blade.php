@@ -18,7 +18,6 @@
             <a href="#gallery" class="px-1 hover:text-accent transition">Galerija</a>
             <a href="#calendar" class="px-1 hover:text-accent transition">Kalendārs</a>
             <a href="#contacts" class="px-1 hover:text-accent transition">Kontakti</a>
-            <a href="/zina" class="px-1 pr-3 hover:text-accent transition">Ziņa administratoram</a>
         </div>
     </div>
 
@@ -42,7 +41,6 @@
                 <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#gallery" @click="showDropdown = ! showDropdown">Galerija</a></li>
                 <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#calendar" @click="showDropdown = ! showDropdown">Kalendārs</a></li>
                 <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="#contacts" @click="showDropdown = ! showDropdown">Kontakti</a></li>
-                <li class="p-5 border-t border-t-stone-500 hover:text-accent"><a href="/zina" @click="showDropdown = ! showDropdown">Ziņa administratoram</a></li>
             </ul>
         </div>
     </div>
@@ -213,6 +211,7 @@
 
 @section('map')
 <div class="bg-neutral-800">
+    <!-- Contact info -->
     <div class="flex items-center justify-center">
         <div class="
                 w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300
@@ -235,7 +234,27 @@
                 </div>
         </div>
     </div>
+    <!-- Contact admin form -->
+    <form class="w-full flex items-center justify-center" method="POST" name="admin">
+        <div class="flex flex-col items-center justify-center pb-10 w-full sm:w-4/5 md:w-4/5 lg:w-2/3 text-gray-600">
+            <h1 class="text-4xl text-accent font-serif pb-10 text-center">Nodod ziņu administratoram:</h1>
+            <div class="flex flex-col lg:flex-row gap-4 w-full lg:w-2/3 p-5">
+                <input class="bg-white p-3 flex-1 border-2 border-gray-300 focus:ring-2 focus:ring-accent focus:outline-none" type="text" name="name" placeholder="Vārds *">
+                <input class="bg-white p-3 flex-1 border-2 border-gray-300 focus:ring-2 focus:ring-accent focus:outline-none" type="text" name="email" placeholder="Epasts *">
+            </div>
+            <div class="w-full lg:w-2/3 p-5 pt-0 text-center">
+                <textarea name="message" class="bg-white w-full border-2 border-gray-300 focus:ring-2 focus:ring-accent focus:outline-none p-3" rows="3" placeholder="Ziņa *"></textarea>
+            </div>
+            <button type="submit" class="pb-8">
+                <div class="bg-accent text-white font-bold px-10 py-3 rounded hover:grayscale-80 transition">
+                    Nosūtīt ziņu
+                </div>
+            </button>
+        </div>
+    </form>
+    <!-- Google map -->
     <div class="gmap js-gmap" id="map"></div>
+    <!-- Footer -->
     <div class="flex flex-col items-center justify-center text-stone-300">
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center">
             <div class="grid grid-cols-1 lg:grid-cols-2 h-auto pt-12 pb-10">
