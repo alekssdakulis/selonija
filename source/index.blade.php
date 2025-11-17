@@ -1,7 +1,12 @@
 @extends('_layouts.main')
 
 @section('navigation')
-<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-center py-1 opacity-95  h-auto">
+<nav id="main-nav" class="fixed top-0 w-full z-50 flex items-center justify-center py-1 opacity-95 h-auto transition"
+     x-data="{positionTop: true, showDropdown: false}"
+     @scroll.window="positionTop = (window.pageYOffset < 300) ? true : false"
+     :class="!positionTop || showDropdown?'bg-neutral-800 shadow':''"
+    >
+
     <!--Desktop-->
     <div class="w-full sm:w-4/5 md:w-full lg:w-2/3 m-auto items-center justify-center hidden md:flex">
         <img src="/assets/images/brand.png" class="h-20" alt="brand">
@@ -16,11 +21,11 @@
     </div>
 
     <!--Mobile-->
-    <div x-data="{showDropdown: false}" class="w-full flex flex-col items-center justify-between md:hidden p-1">
+    <div class="w-full flex flex-col items-center justify-between md:hidden p-1">
         <div class="w-full flex items-center justify-between">
             <a href="#landing" class="flex flex-row items-center">
                 <img src="/assets/images/brand.png" class="h-15" alt="brand">
-                <div class="text-accent font-bold text-3xl">Selonija</div>
+                <div class="text-accent font-serif text-3xl">Selonija</div>
             </a>
             
             <div class="flex flex-col gap-1 cursor-pointer pr-5" @click="showDropdown = ! showDropdown">
