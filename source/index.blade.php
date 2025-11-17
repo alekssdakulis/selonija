@@ -18,7 +18,7 @@
             <a href="#gallery" class="px-1 hover:text-accent transition">Galerija</a>
             <a href="#calendar" class="px-1 hover:text-accent transition">Kalendārs</a>
             <a href="#contacts" class="px-1 hover:text-accent transition">Kontakti</a>
-            <a href="https://interna.selonija.lv/" class="flex items-center gap-2 px-3 py-1 bg-accent hover:bg-accent hover:grayscale-60 transition rounded">
+            <a href="https://interna.selonija.lv/" class="flex items-center gap-2 px-3 py-1 bg-dark-accent hover:bg-accent transition rounded">
                 <span>Biedriem</span>
                 <img src="/assets/images/vairogs.png" alt="vairogs" class="h-5">
             </a>
@@ -222,7 +222,7 @@
     <div class="flex items-center justify-center">
         <div class="
                 w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center text-stone-300
-                flex justify-evenly py-20 max-sm:flex-col gap-10
+                flex justify-evenly py-20 max-md:flex-col gap-10
                 ">
                 <div class="flex gap-4 items-center">
                         <i data-lucide="mail" class="size-[60px] text-accent stroke-1"></i>
@@ -231,31 +231,35 @@
                 <div class="flex gap-4 items-center">
                         <i data-lucide="map-pin" class="size-[60px] text-accent stroke-1"></i>
                         <div>
-                            <p>Stabu iela 17</p>
+                            <p class="whitespace-nowrap">Stabu iela 17</p>
                             <p>Rīga</p>
                         </div>
                 </div>
                 <div class="flex gap-4 items-center">
                         <i data-lucide="phone" class="size-[60px] text-accent stroke-1"></i>
-                        <div>Telefons: (+371) 6727-3303</div>
+                        <div>Telefons: <span class="whitespace-nowrap">(+371) 6727-3303</span></div>
                 </div>
         </div>
     </div>
     <!-- Contact admin form -->
-    <form class="w-full flex items-center justify-center" method="POST" name="admin">
-        <div class="flex flex-col items-center justify-center pb-10 w-full sm:w-4/5 md:w-4/5 lg:w-2/3 text-gray-600">
-            <h1 class="text-4xl text-accent font-serif pb-10 text-center">Nodod ziņu administratoram:</h1>
-            <div class="flex flex-col lg:flex-row gap-4 w-full lg:w-2/3 p-5">
-                <input class="bg-white p-3 flex-1 border-2 border-gray-300 focus:ring-2 focus:ring-accent focus:outline-none" type="text" name="name" placeholder="Vārds *">
-                <input class="bg-white p-3 flex-1 border-2 border-gray-300 focus:ring-2 focus:ring-accent focus:outline-none" type="text" name="email" placeholder="Epasts *">
-            </div>
-            <div class="w-full lg:w-2/3 p-5 pt-0 text-center">
-                <textarea name="message" class="bg-white w-full border-2 border-gray-300 focus:ring-2 focus:ring-accent focus:outline-none p-3" rows="3" placeholder="Ziņa *"></textarea>
-            </div>
-            <button type="submit" class="pb-8">
-                <div class="bg-accent text-white font-bold px-10 py-3 rounded hover:grayscale-80 transition cursor-pointer">
-                    Nosūtīt ziņu
-                </div>
+    <form method="POST" name="admin" netlify data-netlify-recaptcha="true"
+        class="mx-auto mt-0 max-w-2xl px-4 py-10 flex flex-col gap-4"
+        >
+        <h1 class="text-4xl text-accent font-serif pb-10 text-center">Nodod ziņu administratoram:</h1>
+        <div class="flex gap-4 max-sm:flex-col">
+            <input type="text" name="name" placeholder="Vārds *"
+                   class="p-3 flex-1 bg-white text-black rounded outline-none focus:ring-3 focus:ring-accent" required>
+            <input type="text" name="email" placeholder="Epasts *"
+                   class="p-3 flex-1 bg-white text-black rounded outline-none focus:ring-3 focus:ring-accent" required>
+        </div>
+        <textarea name="message" placeholder="Ziņa *"
+                  class="w-full min-h-20 p-3 flex-1 bg-white text-black rounded outline-none focus:ring-3 focus:ring-accent" required>
+
+        </textarea>
+        <div class="flex max-sm:flex-col justify-between items-center">
+            <div data-netlify-recaptcha="true"></div>
+            <button type="submit" class="bg-dark-accent text-white font-bold px-10 py-3 rounded hover:bg-accent transition cursor-pointer">
+                Nosūtīt ziņu
             </button>
         </div>
     </form>

@@ -1,5 +1,9 @@
 @import "./custom-fonts.css" layer(base);
-@import "tailwindcss";
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
 @import "./custom-base.css" layer(base);
 
 .navigation {
@@ -20,4 +24,6 @@
         Sarkans: PMS 200, hex #ba0c2f
      */
     --color-accent: #84bd00;
+    /*--color-accent-hover: rgba(var(--color-accent), 10%);*/
+    --color-dark-accent: color-mix(in srgb, var(--color-accent), black 30%);
 }
