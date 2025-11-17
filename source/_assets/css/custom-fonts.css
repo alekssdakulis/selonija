@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Noto Sans", sans-serif;
+    src: url("/source/_assets/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf");
+    font-weight: 1 999;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Noto Serif", serif;
+    src: url("/source/_assets/fonts/Noto_Serif/NotoSerif-VariableFont_wdth,wght.ttf");
+    font-weight: 1 999;
+    font-display: swap;
+}
+

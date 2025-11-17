@@ -1,7 +1,12 @@
 @extends('_layouts.main')
 
 @section('navigation')
-<nav id="main-nav" class="fixed top-0 w-full z-50 bg-neutral-800 shadow flex items-center justify-center py-1 opacity-95  h-auto">
+<nav id="main-nav" class="fixed top-0 w-full z-50 flex items-center justify-center py-1 opacity-95 h-auto transition"
+     x-data="{positionTop: true, showDropdown: false}"
+     @scroll.window="positionTop = (window.pageYOffset < 300) ? true : false"
+     :class="!positionTop || showDropdown?'bg-neutral-800 shadow':''"
+    >
+
     <!--Desktop-->
     <div class="w-full sm:w-4/5 md:w-full lg:w-2/3 m-auto items-center justify-center hidden md:flex">
         <svg class="h-20 text-accent" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -18,11 +23,11 @@
     </div>
 
     <!--Mobile-->
-    <div x-data="{showDropdown: false}" class="w-full flex flex-col items-center justify-between md:hidden p-1">
+    <div class="w-full flex flex-col items-center justify-between md:hidden p-1">
         <div class="w-full flex items-center justify-between">
             <a href="#landing" class="flex flex-row items-center">
                 <img src="/assets/images/brand.png" class="h-15" alt="brand">
-                <div class="text-accent font-bold text-3xl">Selonija</div>
+                <div class="text-accent font-serif text-3xl">Selonija</div>
             </a>
             
             <div class="flex flex-col gap-1 cursor-pointer pr-5" @click="showDropdown = ! showDropdown">
@@ -162,15 +167,13 @@
 @endsection
 
 @section('calendar')
-<div class="min-h-screen flex flex-col items-center justify-center pb-12" id="calendar">
-    <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
-    <div class="text-center text-xl pt-5 pb-8 text-accent font-bold">tuvākajiem pasākumiem Selonijā</div>
-    <div class="googleCalendar w-full sm:w-4/5 md:w-4/5 lg:w-2/3 wow fadeInLeft"><!-- col-md-12 col-lg-12 -->
-        <div id="full-calendar"></div>
-    <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=lkmqpoa39ocrgap4u767r5gj7o%40group.calendar.google.com&amp;color=%232952A3&amp;src=1r88r3shdnm409er2vjtcqejq8%40group.calendar.google.com&amp;color=%23A32929&amp;src=h2lgqj5fggdhtl0ii1m5d71doo%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Europe%2FRiga" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe> -->
-    <!-- <img src="img/arrow.png" alt="" class="img-responsive wow pull-right fadeInRight"> -->
+    <div id="calendar" class="min-h-screen flex flex-col items-center justify-center pb-12">
+        <h1 class="text-center font-bold text-4xl pt-30">Seko līdzi</h1>
+        <div class="text-center text-xl pt-5 pb-8 text-accent font-bold">tuvākajiem pasākumiem Selonijā</div>
+        <div class="max-w-7xl w-full " x-data="fullCalendar">
+            <div x-ref="calendar"></div>
+        </div>
     </div>
-</div>
 @endsection
 
 @section('contacts')
@@ -217,7 +220,7 @@
                 ">
                 <div class="flex gap-4 items-center">
                         <i data-lucide="mail" class="size-[60px] text-accent stroke-1"></i>
-                        <a class="text-accent" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                        <a class="text-accent" data-mailto="{{ base64_encode(base64_encode('prezidijs@selonija.lv')) }}"></a>
                 </div>
                 <div class="flex gap-4 items-center">
                         <i data-lucide="map-pin" class="size-[60px] text-accent stroke-1"></i>
@@ -260,14 +263,14 @@
                         Reģ. Nr.:40008181369<br>
                         LV29HABA0551036152947<br>
                         Swedbank: HABALV22<br>
-                        <a class="text-accent" href="mailto:prezidijs@selonija.lv">prezidijs@selonija.lv</a>
+                        <a class="text-accent" data-mailto="{{ base64_encode(base64_encode('prezidijs@selonija.lv')) }}"></a>
                     </div>
                     <div>
                         KORPORĀCIJAS SELONIJA FILISTRU PALĪDZĪBAS BIEDRĪBA<br>
                         Reģ. Nr.: 50008005671<br>
                         LV34HABA0551026002874<br>
                         Swedbank: HABALV22<br>
-                        <a class="text-accent" href="mailto:valde@selonija.lv">valde@selonija.lv</a>
+                        <a class="text-accent" data-mailto="{{ base64_encode(base64_encode('valde@selonija.lv')) }}"></a>
                     </div>
                 </div>
             </div>
@@ -336,11 +339,6 @@
           });
 
         }
-        $('.debase64').each(function(){
-          var mail = window.atob($(this).data('mailto'));
-          $(this).attr("href", "mailto:"+mail);
-          $(this).html(mail);
-        });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6QH29dnJtaXcwJui9pIIXe3RydftOAc&callback=initMap"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
