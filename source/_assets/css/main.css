@@ -5,6 +5,7 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @import "./custom-base.css" layer(base);
+@plugin "@tailwindcss/typography";
 
 .navigation {
     @apply font-bold text-red-700;
