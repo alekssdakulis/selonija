@@ -126,7 +126,7 @@
 @endsection
 
 @section('gallery')
-<div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center">
+<div x-data="{ filter: 'visas', selectedImage: null}" id="gallery" class="h-auto items-center">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
     <div class="flex w-full justify-center space-x-3 lg:space-x-6 pt-11 uppercase font-bold text-sm lg:text-md">
         <span :class="filter === 'visas' ? 'text-accent' : ''"
@@ -144,17 +144,16 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-8">
         @foreach ($photos->sortBy('weight') as $photo)
-            <template x-if="filter === 'visas' || '{{ $photo->tag }}' === filter">
-                <div class="relative group" @click=" selectedImage = '{{ $photo->image }}'">
-                    <img src="{{ $photo->image }}"
-                         alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
-                         class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
-                        <h1 class="text-accent text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $photo->title }}</h1>
-                        <span class="text-neutral-300 px-8 text-sm text-center">{{ $photo->description }}</span>
-                    </div>
+            <div x-show="filter === 'visas' || '{{ $photo->tag }}' === filter" class="relative group"
+                @click=" selectedImage = '{{ $photo->image }}'">
+                <img src="{{ $photo->image }}"
+                        alt="{{ $photo->title ?? 'Selonijas galerijas attēls' }}"
+                        class="w-full h-full object-cover grayscale-0 group-hover:grayscale cursor-pointer transition duration-600">
+                <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-600 cursor-pointer bg-neutral-800 bg-opacity-50">
+                    <h1 class="text-accent text-xl font-bold text-center px-2 pb-2 py-1 rounded">{{ $photo->title }}</h1>
+                    <span class="text-neutral-300 px-8 text-sm text-center">{{ $photo->description }}</span>
                 </div>
-            </template>
+            </div>
         @endforeach
     </div>
 
