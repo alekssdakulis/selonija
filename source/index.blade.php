@@ -58,7 +58,7 @@
 <div id="landing" class="p-8 h-[100vh] flex items-center relative">
     <div class="max-w-xl mx-auto text-stone-100 text-center z-20">
         <h2 class="float-center text-6xl p-8">Laipni lūgts <span class="text-accent">Selonijā</span></h2>
-        <div class="text-stone-200">
+        <div class="text-stone-100">
             Studentu korporācija Selonija ir akadēmiska mūža brālība ar mērķi attītstīt un atbalstīt savas sabiedrības locekļus, audzinot tos goda, augstas pašapziņas un latvietības vērtībās, kas ir svarīgas brīvas Latvijas valsts izaugsmei un ilgtspējīgai, uz mērķi orientētai attīstībai. Selonija sastāv no Selonijas konventa un Filistru biedrības.
         </div>
     </div>
