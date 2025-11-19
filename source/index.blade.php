@@ -62,7 +62,7 @@
             Studentu korporācija Selonija ir akadēmiska mūža brālība ar mērķi attītstīt un atbalstīt savas sabiedrības locekļus, audzinot tos goda, augstas pašapziņas un latvietības vērtībās, kas ir svarīgas brīvas Latvijas valsts izaugsmei un ilgtspējīgai, uz mērķi orientētai attīstībai. Selonija sastāv no Selonijas konventa un Filistru biedrības.
         </div>
     </div>
-    <div class="absolute inset-0 bg-cover bg-center h-[100vh] opacity-100 grayscale-[70%]"
+    <div class="absolute inset-0 bg-cover bg-center h-[100vh] brightness-50"
         style="background-image: url('/assets/images/slide1.jpg');">
     </div>
 </div>
