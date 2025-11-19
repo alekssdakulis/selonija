@@ -55,16 +55,18 @@
 @endsection
 
 @section('landing')
-<div id="landing" class="p-8 bg-cover bg-center h-[100vh] flex items-center grayscale-[40%]"
-    style="background-image: url('/assets/images/slide1.jpg');">
+<div id="landing" class="p-8 h-[100vh] flex items-center relative">
     <div class="flex-3"></div>
-    <div class="flex-2 text-stone-100 text-center">
+    <div class="flex-2 text-stone-100 text-center z-20">
         <h2 class="float-center text-6xl p-8">Laipni lūgts <span class="text-accent">Selonijā</span></h2>
-        <div class="text-stone-300">
+        <div class="text-stone-200">
             Studentu korporācija Selonija ir akadēmiska mūža brālība ar mērķi attītstīt un atbalstīt savas sabiedrības locekļus, audzinot tos goda, augstas pašapziņas un latvietības vērtībās, kas ir svarīgas brīvas Latvijas valsts izaugsmei un ilgtspējīgai, uz mērķi orientētai attīstībai. Selonija sastāv no Selonijas konventa un Filistru biedrības.
         </div>
     </div>
     <div class="flex-3"></div>
+    <div class="absolute inset-0 bg-cover bg-center h-[100vh] opacity-100 grayscale-[70%]"
+        style="background-image: url('/assets/images/slide1.jpg');">
+    </div>
 </div>
 @endsection
 
