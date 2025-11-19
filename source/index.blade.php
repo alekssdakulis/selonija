@@ -190,14 +190,13 @@
             @foreach ($prezidijs->sortBy('weight') as $amatpersona)
                     <div class="relative group">
                         <div>
-                        <img src="{{ $amatpersona->image }}"
-                            alt="{{ $amatpersona->title ?? 'Selonijas galerijas attēls' }}"
-                            class="w-full h-full object-cover grayscale-0 group-hover:grayscale transition duration-600">
+                            <img src="{{ $amatpersona->image }}"
+                                alt="{{ $amatpersona->title ?? 'Selonijas galerijas attēls' }}"
+                                class="w-full h-full object-cover grayscale-0 group-hover:grayscale transition duration-600">
                         </div>
                         <span class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center font-bold text-l text-accent group-hover:hidden">{{ $amatpersona->name }}</span>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-60 transition duration-300 bg-neutral-800 bg-opacity-50">
-                        <h1 class="text-accent text-xl font-bold text-center px-2 py-1 rounded pb-23 mt-auto">{{ $amatpersona->title }}</h1>
-                        <!--span class="text-neutral-300 px-8 text-sm text-center">{{ $amatpersona->name }}</span-->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-80 transition duration-300 bg-neutral-800 bg-opacity-50">
+                            <h1 class="text-accent text-xl font-bold text-center px-2 py-1 rounded pb-23 mt-auto">{{ $amatpersona->title }}</h1>
                         </div>
                     </div>
                 
