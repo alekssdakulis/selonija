@@ -128,7 +128,7 @@
 @section('gallery')
 <div x-data="{ filter: 'visas', selectedImage: null }" id="gallery" class="h-auto items-center">
     <h1 class="text-4xl font-bold p-5 text-center pt-30">Ieskats Selonijas dzīvē</h1>
-    <div class="flex w-full justify-center space-x-6 pt-11 uppercase font-bold">
+    <div class="flex w-full justify-center space-x-3 lg:space-x-6 pt-11 uppercase font-bold text-sm lg:text-md">
         <span :class="filter === 'visas' ? 'text-accent' : ''"
               class="hover:text-accent transition cursor-pointer"
               @click="filter = 'visas'">visas</span>
