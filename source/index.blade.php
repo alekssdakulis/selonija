@@ -254,7 +254,7 @@
                   class="w-full min-h-20 p-3 flex-1 bg-white text-black rounded outline-none focus:ring-3 focus:ring-accent" required>
 
         </textarea>
-        <div class="flex max-sm:flex-col justify-between items-center">
+        <div class="flex max-sm:flex-col justify-between items-center gap-4">
             <div data-netlify-recaptcha="true"></div>
             <button type="submit" class="bg-dark-accent text-white font-bold px-10 py-3 rounded hover:bg-accent transition cursor-pointer">
                 Nosūtīt ziņu
@@ -262,7 +262,18 @@
         </div>
     </form>
     <!-- Google map -->
-    <div class="gmap js-gmap" id="map"></div>
+    <gmp-map
+            center="56.957755,24.1258373"
+            zoom="15"
+            map-id="f91852acc9527315f7c8412d"
+            style="height: 500px">
+        <gmp-advanced-marker
+                position="56.957755,24.1258373"
+                title="Selonija"
+                anchor-top="-50%">
+            <img src="/assets/images/vcfs_brand_green.png">
+        </gmp-advanced-marker>
+    </gmp-map>
     <!-- Footer -->
     <div class="flex flex-col items-center justify-center text-stone-300">
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center">
@@ -304,71 +315,10 @@
             </div>
         </div>
         <div class="w-full sm:w-4/5 md:w-4/5 lg:w-2/3 items-center" x-data="{ currentYear: new Date().getFullYear() }">
-            <div class="w-full text-center p-10 border-t border-t-stone-300"><span class="font-bold text-accent">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
+            <div class="w-full text-center p-10 border-t border-t-stone-300"><span class="font-serif font-bold text-accent">Selonija</span> © 1880-<span x-text="currentYear"></span>. Visas tiesības aizsargātas.</div>
         </div>
     </div>
 </div>
-
-<script>
-        var map;
-        var image = 'img/map-label.png';
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 56.9576517,lng: 24.1256158},
-            zoom: 15,
-            styles: [{
-              "featureType": "road",
-              "stylers": [{
-                "color": "#333333"
-              }]
-            }, {
-              "featureType": "landscape",
-              "stylers": [{
-                "color": "#1F1F1F"
-              }]
-            }, {
-              "featureType": "water",
-              "stylers": [{
-                "color": "#D4B068"
-              }]
-            }, {
-              "elementType": "labels.text.fill",
-              "stylers": [{
-                "color": "#808080"
-              }]
-            }, {
-              "featureType": "poi",
-              "stylers": [{
-                "color": "#232323"
-              }]
-            }, {
-              "elementType": "labels.text",
-              "stylers": [{
-                "saturation": 1
-              }, {
-                "weight": 0.1
-              }, {
-                "color": "#999999"
-              }]
-            }]
-          });
-
-          marker = new google.maps.Marker({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat: 56.9576517, lng: 24.1256158},
-            icon: image,
-            verticalAlign: 'bottom',
-            horizontalAlign: 'center',
-            backgroundColor: '#d3cfcf',
-            infoWindow: {
-              content: '<div class="map-info">Stabu 17, Rīga<br>Latvijas Republika</div>'
-            }
-          });
-
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6QH29dnJtaXcwJui9pIIXe3RydftOAc&callback=initMap"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62276173-1"></script>
     <script>
@@ -378,7 +328,10 @@
 
       gtag('config', ['UA','62276173','1'].join('-'));
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcTbxBGNJQ0qOUh6QaOvnTm-rx26O_v9U&libraries=maps,marker&v=weekly" defer></script>
 @endsection
+
+
 
 @section('tester')
 <div class="h-[100vh]">
